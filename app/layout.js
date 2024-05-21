@@ -1,7 +1,8 @@
-// import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootswatch/dist/sketchy/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootswatch/dist/sketchy/bootstrap.min.css'
+import '../styles/custom.scss'
 import { Inter } from 'next/font/google'
-import '../style/globals.css'
+import '../styles/globals.css'
 import Header from '../components/Header'
 
 const inter = Inter({ subsets: ['latin'] })

@@ -1,34 +1,64 @@
 'use client'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import {
+  Container,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Offcanvas,
+  Form,
+  Button,
+} from 'react-bootstrap'
 
 const Header = () => {
   return (
-    <Navbar class='navbar navbar-expand-lg bg-primary' data-bs-theme='dark'>
-      <Container>
-        <Navbar.Brand href='#home'>M. Sakeeb</Navbar.Brand>
-        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='ms-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#link'>Link</Nav.Link>
-            <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.2'>
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.4'>
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar
+        key={false}
+        expand={false}
+        className='bg-primary'
+        data-bs-theme='dark'
+      >
+        <Container fluid>
+          <Navbar.Brand href='/'>
+            <span className='title'>My Portfolio</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
+          <Navbar.Offcanvas
+            id={`offcanvasNavbar-expand-${false}`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-${false}`}
+            placement='end'
+            className='bg-primary'
+            data-bs-theme='dark'
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>
+                <span className='title'>M. Sakeeb</span>
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <hr />
+            <Offcanvas.Body>
+              <Nav className='justify-content-end flex-grow-1 pe-3'>
+                <Nav.Link href='/?scroll=about'>
+                  <span className='navTitle'>About</span>
+                </Nav.Link>
+                <Nav.Link href='/?scroll=skills'>
+                  <span className='navTitle'>Skills</span>
+                </Nav.Link>
+                <Nav.Link href='/?scroll=projects'>
+                  <span className='navTitle'>Projects</span>
+                </Nav.Link>
+                <Nav.Link href='/?scroll=contact'>
+                  <span className='navTitle'>Contact</span>
+                </Nav.Link>
+                <Nav.Link href='/?scroll=social'>
+                  <span className='navTitle'>Social</span>
+                </Nav.Link>
+              </Nav>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+        </Container>
+      </Navbar>
+    </>
   )
 }
 
