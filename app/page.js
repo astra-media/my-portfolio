@@ -1,47 +1,44 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Container } from 'react-bootstrap'
 
 const Home = () => {
-  const searchParams = useSearchParams()
-  const scrollTo = searchParams.get('scroll')
-
   const about = useRef(null)
   const skills = useRef(null)
   const projects = useRef(null)
   const contact = useRef(null)
   const social = useRef(null)
 
-  const executeScroll = (x) => {
-    if (x != null) {
-      if (x == 'about') {
-        about.current.scrollIntoView()
+  const ExecuteScroll = () => {
+    const searchParams = useSearchParams()
+    const scrollTo = searchParams.get('scroll')
+
+    if (scrollTo != null) {
+      if (scrollTo == 'about') {
+        about.current?.scrollIntoView()
       }
-      if (x == 'skills') {
-        skills.current.scrollIntoView()
+      if (scrollTo == 'skills') {
+        skills.current?.scrollIntoView()
       }
-      if (x == 'projects') {
-        projects.current.scrollIntoView()
+      if (scrollTo == 'projects') {
+        projects.current?.scrollIntoView()
       }
-      if (x == 'contact') {
-        contact.current.scrollIntoView()
+      if (scrollTo == 'contact') {
+        contact.current?.scrollIntoView()
       }
-      if (x == 'social') {
-        social.current.scrollIntoView()
+      if (scrollTo == 'social') {
+        contact.current?.scrollIntoView()
       }
     }
   }
 
-  useEffect(() => {
-    if (scrollTo) {
-      executeScroll(scrollTo)
-    }
-  }, [searchParams])
-
   return (
     <Container>
+      <Suspense>
+        <ExecuteScroll />
+      </Suspense>
       <h1 className='title' ref={about}>
         About
       </h1>
@@ -203,7 +200,7 @@ const Home = () => {
       <br />
 
       <h1 className='title' ref={social}>
-        Resume & Github
+        Social
       </h1>
       <p>
         Id culpa veniam ea culpa cupidatat. Fugiat irure et laborum occaecat
