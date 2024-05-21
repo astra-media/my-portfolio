@@ -29,7 +29,7 @@ const Home = () => {
         contact.current?.scrollIntoView()
       }
       if (scrollTo == 'social') {
-        contact.current?.scrollIntoView()
+        social.current?.scrollIntoView()
       }
     }
   }
