@@ -15,20 +15,22 @@ const Home = () => {
   const social = useRef(null)
 
   const executeScroll = (x) => {
-    if (x == 'about') {
-      about.current.scrollIntoView()
-    }
-    if (x == 'skills') {
-      skills.current.scrollIntoView()
-    }
-    if (x == 'projects') {
-      projects.current.scrollIntoView()
-    }
-    if (x == 'contact') {
-      contact.current.scrollIntoView()
-    }
-    if (x == 'social') {
-      social.current.scrollIntoView()
+    if (x != null) {
+      if (x == 'about') {
+        about.current.scrollIntoView()
+      }
+      if (x == 'skills') {
+        skills.current.scrollIntoView()
+      }
+      if (x == 'projects') {
+        projects.current.scrollIntoView()
+      }
+      if (x == 'contact') {
+        contact.current.scrollIntoView()
+      }
+      if (x == 'social') {
+        social.current.scrollIntoView()
+      }
     }
   }
 
