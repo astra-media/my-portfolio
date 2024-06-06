@@ -1,220 +1,195 @@
 'use client'
 
-import { useEffect, useRef, Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { Container } from 'react-bootstrap'
+import { useRef, useState, useEffect } from 'react'
+import { Container, Button } from 'react-bootstrap'
+
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 const Home = () => {
+  const [scrollTo, setScrollTo] = useState(null)
+
   const about = useRef(null)
   const skills = useRef(null)
-  const projects = useRef(null)
+  const portfolio = useRef(null)
   const contact = useRef(null)
   const social = useRef(null)
 
-  const ExecuteScroll = () => {
-    const searchParams = useSearchParams()
-    const scrollTo = searchParams.get('scroll')
+  const comp1 = useRef()
 
-    if (scrollTo != null) {
-      if (scrollTo == 'about') {
-        about.current?.scrollIntoView()
-      }
-      if (scrollTo == 'skills') {
-        skills.current?.scrollIntoView()
-      }
-      if (scrollTo == 'projects') {
-        projects.current?.scrollIntoView()
-      }
-      if (scrollTo == 'contact') {
-        contact.current?.scrollIntoView()
-      }
-      if (scrollTo == 'social') {
-        social.current?.scrollIntoView()
-      }
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const paramValue = params.get('scroll')
+
+    setScrollTo(paramValue)
+
+    if (scrollTo) {
+      ExecuteScroll(scrollTo)
+    }
+  }, [scrollTo])
+
+  const ExecuteScroll = (x) => {
+    if (x == 'about') {
+      about.current?.scrollIntoView()
+    }
+    if (x == 'skills') {
+      skills.current?.scrollIntoView()
+    }
+    if (x == 'portfolio') {
+      portfolio.current?.scrollIntoView()
+    }
+    if (x == 'contact') {
+      contact.current?.scrollIntoView()
+    }
+    if (x == 'social') {
+      social.current?.scrollIntoView()
     }
   }
 
+  gsap.registerPlugin(useGSAP)
+
+  useGSAP(
+    () => {
+      let t1 = gsap.timeline()
+      t1.to('#white-foreground', {
+        opacity: 0,
+        xPercent: '-100',
+      })
+        .from('#intro-slider', { xPercent: '-100', duration: 1.3, delay: 0.3 })
+        .from(
+          ['#title-1', '#title-2', '#title-3'], //grouped in array
+          {
+            opacity: 0,
+            y: '+=30',
+            stagger: 0.5, //allows each animation from array to have slight delay
+          }
+        )
+        .to(['#title-1', '#title-2', '#title-3'], {
+          opacity: 0,
+          y: '-=30',
+          delay: 0.3,
+          stagger: 0.5,
+        })
+        .to('#intro-slider', {
+          xPercent: '-100',
+          duration: 1.3,
+        })
+        .from('#welcome', {
+          opacity: 0,
+          duration: 1.5,
+        })
+    },
+    { scope: comp1, dependencies: [] }
+  )
+
   return (
-    <Container>
-      <Suspense>
-        <ExecuteScroll />
-      </Suspense>
-      <h1 className='title' ref={about}>
-        About
-      </h1>
-      <p>
-        Nulla ea esse sit velit culpa nostrud nulla esse duis aliqua dolore. Do
-        consectetur dolore amet ad excepteur est duis veniam non nisi ea duis
-        elit. Non sit aliquip laboris in incididunt dolor nulla irure id. Labore
-        pariatur Lorem et pariatur in elit aliquip quis exercitation. Velit aute
-        sunt commodo veniam reprehenderit aliqua eu ut. Ipsum irure eu nulla in
-        aute fugiat incididunt qui minim laborum pariatur. Voluptate culpa
-        fugiat aliquip tempor excepteur proident. Velit consequat consectetur
-        labore elit Lorem esse aliqua ea tempor ad aliqua. Sint commodo
-        consectetur mollit voluptate sint ad nulla elit. Proident labore laborum
-        ipsum velit sit. Lorem incididunt veniam officia excepteur quis
-        incididunt laborum mollit officia nostrud dolor laboris magna ullamco.
-        Velit deserunt pariatur elit nostrud consectetur magna amet ad sit.
-        Veniam aliqua proident dolore eiusmod culpa sunt aute Lorem minim in
-        labore duis anim deserunt. Sit irure aliqua duis cillum consectetur nisi
-        nulla nostrud. Adipisicing nulla non duis qui velit enim. Excepteur elit
-        ex esse sunt laboris eiusmod ad adipisicing mollit consequat do dolor
-        qui quis. Nostrud ut sint mollit exercitation ea sit. Fugiat laborum
-        deserunt sit est irure amet adipisicing esse consequat. Sit mollit ipsum
-        tempor sint labore mollit aute consequat occaecat aliquip enim excepteur
-        reprehenderit labore. Aliqua sint qui aliqua quis exercitation est
-        consequat proident ipsum voluptate. Do laborum cillum mollit sunt est
-        pariatur culpa labore eiusmod ea sit aute. Sit aliqua dolore tempor in
-        nulla consectetur cillum enim reprehenderit nulla laboris eu cillum
-        reprehenderit. Pariatur sunt nulla labore occaecat enim. Minim ad
-        aliquip labore culpa incididunt qui irure sit. Eiusmod id eu voluptate
-        excepteur aute quis commodo officia incididunt. Mollit esse duis id
-        officia id magna dolore reprehenderit aute culpa amet. Laborum non est
-        tempor consectetur laboris exercitation sit aliquip. Mollit veniam amet
-        ex voluptate duis ex minim anim. Ut ex dolore do esse dolor ad
-        consequat. Occaecat incididunt Lorem aute excepteur duis commodo ullamco
-        eiusmod. Dolore qui culpa ea non velit.
-      </p>
-
+    <>
+      <div className='relative' ref={comp1}>
+        <div
+          id='white-foreground'
+          className='vh-100 vw-100 position-absolute top-0 left-0 bg-secondary-subtle z-3'
+        ></div>
+        <div
+          id='intro-slider'
+          className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column gap-4 bg-secondary-subtle z-2 p-5'
+        >
+          <h1 id='title-1' className='display-1'>
+            Software Engineer
+          </h1>
+          <h1 id='title-2' className='display-1'>
+            Designer
+          </h1>
+          <h1 id='title-3' className='display-1'>
+            Freelancer
+          </h1>
+        </div>
+        <div className='vh-100 d-flex justify-content-center align-items-center bg-secondary-subtle'>
+          <h1
+            id='welcome'
+            style={{ color: 'black', fontWeight: 'bold', fontSize: '60px' }}
+          >
+            Welcome
+          </h1>
+        </div>
+      </div>
       <br />
-      <br />
+      <Container>
+        <div>
+          <h1 className='title' ref={about}>
+            About
+          </h1>
+          <p>
+            Sint aliquip anim elit consectetur ex tempor proident non deserunt.
+            Officia commodo dolor ea id reprehenderit pariatur officia tempor
+            est exercitation. Labore et sit veniam anim esse do minim sunt eu.
+            Laboris eiusmod laboris pariatur nostrud. Sunt excepteur consequat
+            pariatur cupidatat officia cillum ipsum magna tempor. Nulla proident
+            elit pariatur incididunt aliqua do eu ipsum sunt elit exercitation
+            deserunt proident.
+          </p>
+          <br />
+          <br />
 
-      <h1 className='title' ref={skills}>
-        Skills
-      </h1>
-      <p>
-        Nulla ea esse sit velit culpa nostrud nulla esse duis aliqua dolore. Do
-        consectetur dolore amet ad excepteur est duis veniam non nisi ea duis
-        elit. Non sit aliquip laboris in incididunt dolor nulla irure id. Labore
-        pariatur Lorem et pariatur in elit aliquip quis exercitation. Velit aute
-        sunt commodo veniam reprehenderit aliqua eu ut. Ipsum irure eu nulla in
-        aute fugiat incididunt qui minim laborum pariatur. Voluptate culpa
-        fugiat aliquip tempor excepteur proident. Velit consequat consectetur
-        labore elit Lorem esse aliqua ea tempor ad aliqua. Sint commodo
-        consectetur mollit voluptate sint ad nulla elit. Proident labore laborum
-        ipsum velit sit. Lorem incididunt veniam officia excepteur quis
-        incididunt laborum mollit officia nostrud dolor laboris magna ullamco.
-        Velit deserunt pariatur elit nostrud consectetur magna amet ad sit.
-        Veniam aliqua proident dolore eiusmod culpa sunt aute Lorem minim in
-        labore duis anim deserunt. Sit irure aliqua duis cillum consectetur nisi
-        nulla nostrud. Adipisicing nulla non duis qui velit enim. Excepteur elit
-        ex esse sunt laboris eiusmod ad adipisicing mollit consequat do dolor
-        qui quis. Nostrud ut sint mollit exercitation ea sit. Fugiat laborum
-        deserunt sit est irure amet adipisicing esse consequat. Sit mollit ipsum
-        tempor sint labore mollit aute consequat occaecat aliquip enim excepteur
-        reprehenderit labore. Aliqua sint qui aliqua quis exercitation est
-        consequat proident ipsum voluptate. Do laborum cillum mollit sunt est
-        pariatur culpa labore eiusmod ea sit aute. Sit aliqua dolore tempor in
-        nulla consectetur cillum enim reprehenderit nulla laboris eu cillum
-        reprehenderit. Pariatur sunt nulla labore occaecat enim. Minim ad
-        aliquip labore culpa incididunt qui irure sit. Eiusmod id eu voluptate
-        excepteur aute quis commodo officia incididunt. Mollit esse duis id
-        officia id magna dolore reprehenderit aute culpa amet. Laborum non est
-        tempor consectetur laboris exercitation sit aliquip. Mollit veniam amet
-        ex voluptate duis ex minim anim. Ut ex dolore do esse dolor ad
-        consequat. Occaecat incididunt Lorem aute excepteur duis commodo ullamco
-        eiusmod. Dolore qui culpa ea non velit.
-      </p>
+          <h1 className='title' ref={skills}>
+            Skills
+          </h1>
+          <p>
+            Occaecat elit adipisicing et dolore non sint. Ipsum fugiat ipsum qui
+            in et ut mollit commodo. Culpa culpa officia officia aute occaecat
+            consectetur ex aliqua velit officia. Adipisicing do magna aliqua
+            dolore fugiat eiusmod aliquip cillum dolore nisi et occaecat non.
+            Sit eiusmod commodo enim fugiat cillum. Nisi ad in anim nisi ullamco
+            nostrud. Anim mollit anim velit non.
+          </p>
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <h1 className='title' ref={projects}>
-        Projects
-      </h1>
-      <p>
-        Nulla ea esse sit velit culpa nostrud nulla esse duis aliqua dolore. Do
-        consectetur dolore amet ad excepteur est duis veniam non nisi ea duis
-        elit. Non sit aliquip laboris in incididunt dolor nulla irure id. Labore
-        pariatur Lorem et pariatur in elit aliquip quis exercitation. Velit aute
-        sunt commodo veniam reprehenderit aliqua eu ut. Ipsum irure eu nulla in
-        aute fugiat incididunt qui minim laborum pariatur. Voluptate culpa
-        fugiat aliquip tempor excepteur proident. Velit consequat consectetur
-        labore elit Lorem esse aliqua ea tempor ad aliqua. Sint commodo
-        consectetur mollit voluptate sint ad nulla elit. Proident labore laborum
-        ipsum velit sit. Lorem incididunt veniam officia excepteur quis
-        incididunt laborum mollit officia nostrud dolor laboris magna ullamco.
-        Velit deserunt pariatur elit nostrud consectetur magna amet ad sit.
-        Veniam aliqua proident dolore eiusmod culpa sunt aute Lorem minim in
-        labore duis anim deserunt. Sit irure aliqua duis cillum consectetur nisi
-        nulla nostrud. Adipisicing nulla non duis qui velit enim. Excepteur elit
-        ex esse sunt laboris eiusmod ad adipisicing mollit consequat do dolor
-        qui quis. Nostrud ut sint mollit exercitation ea sit. Fugiat laborum
-        deserunt sit est irure amet adipisicing esse consequat. Sit mollit ipsum
-        tempor sint labore mollit aute consequat occaecat aliquip enim excepteur
-        reprehenderit labore. Aliqua sint qui aliqua quis exercitation est
-        consequat proident ipsum voluptate. Do laborum cillum mollit sunt est
-        pariatur culpa labore eiusmod ea sit aute. Sit aliqua dolore tempor in
-        nulla consectetur cillum enim reprehenderit nulla laboris eu cillum
-        reprehenderit. Pariatur sunt nulla labore occaecat enim. Minim ad
-        aliquip labore culpa incididunt qui irure sit. Eiusmod id eu voluptate
-        excepteur aute quis commodo officia incididunt. Mollit esse duis id
-        officia id magna dolore reprehenderit aute culpa amet. Laborum non est
-        tempor consectetur laboris exercitation sit aliquip. Mollit veniam amet
-        ex voluptate duis ex minim anim. Ut ex dolore do esse dolor ad
-        consequat. Occaecat incididunt Lorem aute excepteur duis commodo ullamco
-        eiusmod. Dolore qui culpa ea non velit.
-      </p>
+          <h1 className='title' ref={portfolio}>
+            Portfolio
+          </h1>
+          <p>
+            Enim aute officia aliquip dolor pariatur ut Lorem mollit qui duis
+            tempor ea ullamco dolore. Mollit pariatur nisi incididunt magna anim
+            est esse quis dolore voluptate laboris sit. Commodo culpa id aliquip
+            anim eiusmod laborum elit. Eiusmod fugiat esse consectetur tempor
+            est ipsum veniam labore tempor dolore amet. Pariatur et consectetur
+            exercitation cupidatat Lorem dolor amet elit sit irure dolore aliqua
+            eiusmod voluptate. Id incididunt consectetur culpa ex.
+          </p>
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <h1 className='title' ref={contact}>
-        Contact
-      </h1>
-      <p>
-        Nulla ea esse sit velit culpa nostrud nulla esse duis aliqua dolore. Do
-        consectetur dolore amet ad excepteur est duis veniam non nisi ea duis
-        elit. Non sit aliquip laboris in incididunt dolor nulla irure id. Labore
-        pariatur Lorem et pariatur in elit aliquip quis exercitation. Velit aute
-        sunt commodo veniam reprehenderit aliqua eu ut. Ipsum irure eu nulla in
-        aute fugiat incididunt qui minim laborum pariatur. Voluptate culpa
-        fugiat aliquip tempor excepteur proident. Velit consequat consectetur
-        labore elit Lorem esse aliqua ea tempor ad aliqua. Sint commodo
-        consectetur mollit voluptate sint ad nulla elit. Proident labore laborum
-        ipsum velit sit. Lorem incididunt veniam officia excepteur quis
-        incididunt laborum mollit officia nostrud dolor laboris magna ullamco.
-        Velit deserunt pariatur elit nostrud consectetur magna amet ad sit.
-        Veniam aliqua proident dolore eiusmod culpa sunt aute Lorem minim in
-        labore duis anim deserunt. Sit irure aliqua duis cillum consectetur nisi
-        nulla nostrud. Adipisicing nulla non duis qui velit enim. Excepteur elit
-        ex esse sunt laboris eiusmod ad adipisicing mollit consequat do dolor
-        qui quis. Nostrud ut sint mollit exercitation ea sit. Fugiat laborum
-        deserunt sit est irure amet adipisicing esse consequat. Sit mollit ipsum
-        tempor sint labore mollit aute consequat occaecat aliquip enim excepteur
-        reprehenderit labore. Aliqua sint qui aliqua quis exercitation est
-        consequat proident ipsum voluptate. Do laborum cillum mollit sunt est
-        pariatur culpa labore eiusmod ea sit aute. Sit aliqua dolore tempor in
-        nulla consectetur cillum enim reprehenderit nulla laboris eu cillum
-        reprehenderit. Pariatur sunt nulla labore occaecat enim. Minim ad
-        aliquip labore culpa incididunt qui irure sit. Eiusmod id eu voluptate
-        excepteur aute quis commodo officia incididunt. Mollit esse duis id
-        officia id magna dolore reprehenderit aute culpa amet. Laborum non est
-        tempor consectetur laboris exercitation sit aliquip. Mollit veniam amet
-        ex voluptate duis ex minim anim. Ut ex dolore do esse dolor ad
-        consequat. Occaecat incididunt Lorem aute excepteur duis commodo ullamco
-        eiusmod. Dolore qui culpa ea non velit.
-      </p>
+          <h1 className='title' ref={contact}>
+            Contact
+          </h1>
+          <p>
+            Aliqua ea sit anim et minim proident ut et sunt ea irure ipsum
+            fugiat sunt. Ut irure nostrud consequat nisi consequat velit eiusmod
+            id cupidatat id et voluptate Lorem. Anim ullamco excepteur mollit
+            nostrud dolor ipsum non quis.
+          </p>
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <h1 className='title' ref={social}>
-        Social
-      </h1>
-      <p>
-        Id culpa veniam ea culpa cupidatat. Fugiat irure et laborum occaecat
-        ullamco labore consectetur ad. In labore laboris consectetur ex sint
-        voluptate occaecat. Commodo ut deserunt excepteur tempor irure quis.
-        Aliquip sunt sint id in culpa non eiusmod irure amet id nulla. Magna ea
-        ut adipisicing mollit ipsum adipisicing tempor ut in consectetur. Non id
-        anim aute ex in amet laboris. Do culpa est et Lorem velit commodo ipsum
-        culpa enim dolor nulla dolore dolore sit. Pariatur esse ipsum incididunt
-        est non magna quis non cupidatat voluptate. Irure adipisicing occaecat
-        duis amet sit excepteur dolore ut cillum mollit proident. Occaecat
-        fugiat ex occaecat deserunt.
-      </p>
-    </Container>
+          <h1 className='title' ref={social}>
+            Social
+          </h1>
+          <p>
+            Velit fugiat incididunt ex minim. Occaecat consectetur labore
+            reprehenderit tempor velit deserunt officia commodo sit duis
+            cupidatat tempor nostrud. Ea nostrud sint ad ipsum tempor incididunt
+            laboris incididunt sint. Eu occaecat incididunt reprehenderit eu
+            cupidatat ullamco eu Lorem. Anim sunt qui ipsum ullamco do
+            adipisicing sint in nostrud esse reprehenderit consectetur sint.
+            Duis enim id sint mollit laboris dolor consequat pariatur est
+            deserunt. Incididunt occaecat voluptate officia magna minim.
+          </p>
+        </div>
+      </Container>
+    </>
   )
 }
 

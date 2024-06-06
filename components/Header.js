@@ -7,33 +7,52 @@ import {
   Offcanvas,
   Form,
   Button,
+  CloseButton,
 } from 'react-bootstrap'
 
+import { useState } from 'react'
+
 const Header = () => {
+  const [show, setShow] = useState(false)
+
   return (
     <>
       <Navbar
         key={false}
         expand={false}
-        className='bg-primary'
+        className='navbar d-flex justify-content-end position-fixed top-0 end-0 z-3'
         data-bs-theme='dark'
+        style={{
+          borderColor: 'transparent',
+        }}
       >
-        <Container fluid>
-          <Navbar.Brand href='/'>
-            <span className='title'>My Portfolio</span>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
+        <>
+          <Navbar.Toggle
+            aria-controls={`offcanvasNavbar-expand-${false}`}
+            onClick={() => setShow(!show)}
+            className='bg-primary'
+          />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${false}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${false}`}
             placement='end'
             className='bg-primary'
             data-bs-theme='dark'
+            show={show}
+            onHide={() => setShow(false)}
           >
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>
-                <span className='title'>M. Sakeeb</span>
+                <Nav.Link href='/'>
+                  <span className='title'>M. Sakeeb</span>
+                </Nav.Link>
               </Offcanvas.Title>
+              <CloseButton
+                style={{ color: 'black' }}
+                onClick={() => {
+                  setShow(false)
+                }}
+              />
             </Offcanvas.Header>
             <hr />
             <Offcanvas.Body>
@@ -44,8 +63,8 @@ const Header = () => {
                 <Nav.Link href='/?scroll=skills'>
                   <span className='navTitle'>Skills</span>
                 </Nav.Link>
-                <Nav.Link href='/?scroll=projects'>
-                  <span className='navTitle'>Projects</span>
+                <Nav.Link href='/?scroll=portfolio'>
+                  <span className='navTitle'>Portfolio</span>
                 </Nav.Link>
                 <Nav.Link href='/?scroll=contact'>
                   <span className='navTitle'>Contact</span>
@@ -56,7 +75,7 @@ const Header = () => {
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
-        </Container>
+        </>
       </Navbar>
     </>
   )
