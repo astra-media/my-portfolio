@@ -12,7 +12,7 @@ import {
 
 import { useState } from 'react'
 
-const Header = () => {
+const Header = ({ setScrollTo }) => {
   const [show, setShow] = useState(false)
 
   return (
@@ -43,9 +43,7 @@ const Header = () => {
           >
             <Offcanvas.Header>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>
-                <Nav.Link href='/'>
-                  <span className='title'>M. Sakeeb</span>
-                </Nav.Link>
+                <span className='title'>M. Sakeeb</span>
               </Offcanvas.Title>
               <CloseButton
                 style={{ color: 'black' }}
@@ -56,22 +54,42 @@ const Header = () => {
             </Offcanvas.Header>
             <hr />
             <Offcanvas.Body>
-              <Nav className='justify-content-end flex-grow-1 pe-3'>
-                <Nav.Link href='/?scroll=about'>
-                  <span className='navTitle'>About</span>
-                </Nav.Link>
-                <Nav.Link href='/?scroll=skills'>
-                  <span className='navTitle'>Skills</span>
-                </Nav.Link>
-                <Nav.Link href='/?scroll=portfolio'>
-                  <span className='navTitle'>Portfolio</span>
-                </Nav.Link>
-                <Nav.Link href='/?scroll=contact'>
-                  <span className='navTitle'>Contact</span>
-                </Nav.Link>
-                <Nav.Link href='/?scroll=social'>
-                  <span className='navTitle'>Social</span>
-                </Nav.Link>
+              <Nav
+                className='justify-content-end flex-grow-1 pe-3'
+                onClick={() => setShow(false)}
+              >
+                <span onClick={() => setScrollTo('about')} className='navTitle'>
+                  About
+                </span>
+                <br />
+                <span
+                  onClick={() => setScrollTo('skills')}
+                  className='navTitle'
+                >
+                  Skills
+                </span>
+                <br />
+
+                <span
+                  onClick={() => setScrollTo('portfolio')}
+                  className='navTitle'
+                >
+                  Portfolio
+                </span>
+                <br />
+                <span
+                  onClick={() => setScrollTo('contact')}
+                  className='navTitle'
+                >
+                  Contact
+                </span>
+                <br />
+                <span
+                  onClick={() => setScrollTo('social')}
+                  className='navTitle'
+                >
+                  Social
+                </span>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

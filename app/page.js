@@ -1,21 +1,20 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
-import { Container, Button } from 'react-bootstrap'
+import { Container, Card } from 'react-bootstrap'
+import Header from '../components/Header'
 
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 const Home = () => {
-  const [scrollTo, setScrollTo] = useState(null)
+  const [scrollTo, setScrollTo] = useState()
 
-  const about = useRef(null)
-  const skills = useRef(null)
-  const portfolio = useRef(null)
-  const contact = useRef(null)
-  const social = useRef(null)
-
-  const comp1 = useRef()
+  const about = useRef()
+  const skills = useRef()
+  const portfolio = useRef()
+  const contact = useRef()
+  const social = useRef()
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -51,11 +50,7 @@ const Home = () => {
   useGSAP(
     () => {
       let t1 = gsap.timeline()
-      t1.to('#white-foreground', {
-        opacity: 0,
-        xPercent: '-100',
-      })
-        .from('#intro-slider', { xPercent: '-100', duration: 1.3, delay: 0.3 })
+      t1.from('#intro-slider', { xPercent: '-100', duration: 1.3, delay: 0.3 })
         .from(
           ['#title-1', '#title-2', '#title-3'], //grouped in array
           {
@@ -78,20 +73,26 @@ const Home = () => {
           opacity: 0,
           duration: 1.5,
         })
+        .to('#welcome', {
+          opacity: 0,
+          yPercent: '-100',
+          duration: 1.3,
+        })
+        .from('#about', {
+          opacity: 0,
+          duration: 1.5,
+        })
     },
-    { scope: comp1, dependencies: [] }
+    { scope: about, dependencies: [] }
   )
 
   return (
     <>
-      <div className='relative' ref={comp1}>
-        <div
-          id='white-foreground'
-          className='vh-100 vw-100 position-absolute top-0 left-0 bg-secondary-subtle z-3'
-        ></div>
+      <Header setScrollTo={setScrollTo} />
+      <div className='relative' ref={about}>
         <div
           id='intro-slider'
-          className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column gap-4 bg-secondary-subtle z-2 p-5'
+          className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column justify-content-center gap-4 bg-secondary-subtle p-5'
         >
           <h1 id='title-1' className='display-1'>
             Software Engineer
@@ -103,11 +104,27 @@ const Home = () => {
             Freelancer
           </h1>
         </div>
-        <div className='vh-100 d-flex justify-content-center align-items-center bg-secondary-subtle'>
-          <h1
-            id='welcome'
-            style={{ color: 'black', fontWeight: 'bold', fontSize: '60px' }}
-          >
+        <div
+          id='about'
+          className='vh-100 bg-secondary-subtle d-flex justify-content-center align-items-center'
+        >
+          <Card style={{ width: '35rem' }}>
+            <Card.Title className='d-flex justify-content-center'>
+              <h3>Hello, my name is M. Sakeeb.</h3>
+            </Card.Title>
+            <Card.Body>
+              Aute proident elit laborum ullamco sunt duis nisi proident ad
+              ullamco minim Lorem quis culpa. Aliqua reprehenderit sit duis
+              minim deserunt. Nisi adipisicing elit quis sunt reprehenderit
+              nulla ad deserunt.
+            </Card.Body>
+          </Card>
+        </div>
+        <div
+          id='welcome'
+          className='vh-100 vw-100 position-absolute top-0 left-0 d-flex justify-content-center align-items-center bg-secondary-subtle'
+        >
+          <h1 style={{ color: 'black', fontWeight: 'bold', fontSize: '60px' }}>
             Welcome
           </h1>
         </div>
@@ -115,21 +132,6 @@ const Home = () => {
       <br />
       <Container>
         <div>
-          <h1 className='title' ref={about}>
-            About
-          </h1>
-          <p>
-            Sint aliquip anim elit consectetur ex tempor proident non deserunt.
-            Officia commodo dolor ea id reprehenderit pariatur officia tempor
-            est exercitation. Labore et sit veniam anim esse do minim sunt eu.
-            Laboris eiusmod laboris pariatur nostrud. Sunt excepteur consequat
-            pariatur cupidatat officia cillum ipsum magna tempor. Nulla proident
-            elit pariatur incididunt aliqua do eu ipsum sunt elit exercitation
-            deserunt proident.
-          </p>
-          <br />
-          <br />
-
           <h1 className='title' ref={skills}>
             Skills
           </h1>
