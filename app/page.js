@@ -1,11 +1,14 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
-import { Container, Card } from 'react-bootstrap'
+import { Container, Card, Row, Col } from 'react-bootstrap'
 import Header from '../components/Header'
 
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
   const [scrollTo, setScrollTo] = useState()
@@ -50,7 +53,10 @@ const Home = () => {
   useGSAP(
     () => {
       let t1 = gsap.timeline()
-      t1.from('#intro-slider', { xPercent: '-100', duration: 1.3, delay: 0.3 })
+      t1.to('#blankScreen', {
+        xPercent: '-100',
+        duration: 1.5,
+      })
         .from(
           ['#title-1', '#title-2', '#title-3'], //grouped in array
           {
@@ -82,6 +88,15 @@ const Home = () => {
           opacity: 0,
           duration: 1.5,
         })
+        .to('#scrollDown', {
+          delay: 0.3,
+          y: '+=20',
+          ease: 'power1.inOut',
+          delay: 0.3,
+          yoyo: true,
+          duration: 1.2,
+          repeat: Infinity,
+        })
     },
     { scope: about, dependencies: [] }
   )
@@ -104,21 +119,34 @@ const Home = () => {
             Freelancer
           </h1>
         </div>
+
         <div
           id='about'
-          className='vh-100 bg-secondary-subtle d-flex justify-content-center align-items-center'
+          className='vh-100 bg-secondary-subtle d-flex flex-column justify-content-between align-items-center'
         >
-          <Card style={{ width: '35rem' }}>
-            <Card.Title className='d-flex justify-content-center'>
-              <h3>Hello, my name is M. Sakeeb.</h3>
-            </Card.Title>
-            <Card.Body>
-              Aute proident elit laborum ullamco sunt duis nisi proident ad
-              ullamco minim Lorem quis culpa. Aliqua reprehenderit sit duis
-              minim deserunt. Nisi adipisicing elit quis sunt reprehenderit
-              nulla ad deserunt.
-            </Card.Body>
-          </Card>
+          <Row className='d-flex align-items-center justify-content-center flex-grow-1'>
+            <Col xs={11} sm={11} md={6} lg={5} xl={5}>
+              <Card>
+                <Card.Title className='d-flex justify-content-center'>
+                  <h3>Hello, my name is M. Sakeeb.</h3>
+                </Card.Title>
+                <Card.Body>
+                  Aute proident elit laborum ullamco sunt duis nisi proident ad
+                  ullamco minim Lorem quis culpa. Aliqua reprehenderit sit duis
+                  minim deserunt. Nisi adipisicing elit quis sunt reprehenderit
+                  nulla ad deserunt.
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+
+          <h5>SCROLL DOWN</h5>
+          <div id='scrollDown' style={{ marginBottom: '100px' }}>
+            <FontAwesomeIcon
+              style={{ fontSize: '25px' }}
+              icon={faChevronDown}
+            />
+          </div>
         </div>
         <div
           id='welcome'
@@ -128,8 +156,13 @@ const Home = () => {
             Welcome
           </h1>
         </div>
+        <div
+          id='blankScreen'
+          className='vh-100 vw-100 position-absolute top-0 left-0 bg-secondary-subtle'
+        />
       </div>
       <br />
+
       <Container>
         <div>
           <h1 className='title' ref={skills}>
