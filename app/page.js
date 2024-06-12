@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
-  const [scrollTo, setScrollTo] = useState()
+  const [scrollTo, setScrollTo] = useState('')
 
   const about = useRef()
   const skills = useRef()
@@ -124,21 +124,24 @@ const Home = () => {
           id='about'
           className='vh-100 bg-secondary-subtle d-flex flex-column justify-content-between align-items-center'
         >
-          <Row className='d-flex align-items-center justify-content-center flex-grow-1'>
-            <Col xs={11} sm={11} md={6} lg={5} xl={5}>
-              <Card>
+          <div
+            className='container d-flex align-items-center justify-content-center flex-grow-1'
+            style={{ maxWidth: '600px' }}
+          >
+            <Card>
+              <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
-                  <h3>Hello, my name is M. Sakeeb.</h3>
+                  Hello, my name is M. Sakeeb.
                 </Card.Title>
-                <Card.Body>
+                <Card.Text>
                   Aute proident elit laborum ullamco sunt duis nisi proident ad
                   ullamco minim Lorem quis culpa. Aliqua reprehenderit sit duis
                   minim deserunt. Nisi adipisicing elit quis sunt reprehenderit
                   nulla ad deserunt.
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
 
           <h5>SCROLL DOWN</h5>
           <div id='scrollDown' style={{ marginBottom: '100px' }}>
