@@ -43,7 +43,7 @@ const Header = ({ setScrollTo }) => {
           >
             <Offcanvas.Header>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>
-                <span className='title'>M. Sakeeb</span>
+                <h4 className='title'>M. Sakeeb</h4>
               </Offcanvas.Title>
               <CloseButton
                 style={{ color: 'black' }}

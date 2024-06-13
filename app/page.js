@@ -4,8 +4,10 @@ import { useRef, useState, useEffect } from 'react'
 import { Container, Card, Row, Col } from 'react-bootstrap'
 import Header from '../components/Header'
 
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { TextPlugin } from 'gsap/TextPlugin'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -48,58 +50,66 @@ const Home = () => {
     }
   }
 
-  gsap.registerPlugin(useGSAP)
+  useGSAP(() => {
+    gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 
-  useGSAP(
-    () => {
-      let t1 = gsap.timeline()
-      t1.to('#blankScreen', {
+    let t1 = gsap.timeline()
+    t1.to('#blankScreen', {
+      xPercent: '-100',
+      duration: 1.5,
+    })
+      .from(
+        ['#title-1', '#title-2', '#title-3'], //grouped in array
+        {
+          opacity: 0,
+          y: '+=30',
+          stagger: 0.5, //allows each animation from array to have slight delay
+        }
+      )
+      .to(['#title-1', '#title-2', '#title-3'], {
+        opacity: 0,
+        y: '-=30',
+        delay: 0.3,
+        stagger: 0.5,
+      })
+      .to('#intro-slider', {
         xPercent: '-100',
+        duration: 1.3,
+      })
+      .from('#welcome', {
+        opacity: 0,
         duration: 1.5,
       })
-        .from(
-          ['#title-1', '#title-2', '#title-3'], //grouped in array
-          {
-            opacity: 0,
-            y: '+=30',
-            stagger: 0.5, //allows each animation from array to have slight delay
-          }
-        )
-        .to(['#title-1', '#title-2', '#title-3'], {
-          opacity: 0,
-          y: '-=30',
-          delay: 0.3,
-          stagger: 0.5,
-        })
-        .to('#intro-slider', {
-          xPercent: '-100',
-          duration: 1.3,
-        })
-        .from('#welcome', {
-          opacity: 0,
-          duration: 1.5,
-        })
-        .to('#welcome', {
-          opacity: 0,
-          yPercent: '-100',
-          duration: 1.3,
-        })
-        .from('#about', {
-          opacity: 0,
-          duration: 1.5,
-        })
-        .to('#scrollDown', {
-          delay: 0.3,
-          y: '+=20',
-          ease: 'power1.inOut',
-          delay: 0.3,
-          yoyo: true,
-          duration: 1.2,
-          repeat: Infinity,
-        })
-    },
-    { scope: about, dependencies: [] }
-  )
+      .to('#welcome', {
+        opacity: 0,
+        yPercent: '-100',
+        duration: 1.3,
+      })
+      .from('#about', {
+        opacity: 0,
+        duration: 1.5,
+      })
+      .to('#scrollDown', {
+        y: '+=20',
+        ease: 'power1.inOut',
+        yoyo: true,
+        duration: 0.8,
+        repeat: Infinity,
+      })
+
+    gsap.utils.toArray('.title').forEach((x, i) => {
+      gsap.from(x, {
+        scrollTrigger: {
+          trigger: x,
+          toggleActions: 'restart none restart none',
+        },
+        delay: 0.1,
+        opacity: 0,
+        text: '-',
+        duration: 0.5,
+      })
+    })
+  }, {})
 
   return (
     <>
@@ -131,7 +141,7 @@ const Home = () => {
             <Card>
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
-                  Hello, my name is M. Sakeeb.
+                  <h5>Hello, my name is M. Sakeeb.</h5>
                 </Card.Title>
                 <Card.Text>
                   Aute proident elit laborum ullamco sunt duis nisi proident ad
@@ -168,9 +178,10 @@ const Home = () => {
 
       <Container>
         <div>
-          <h1 className='title' ref={skills}>
+          <h1 className='title' ref={skills} id='skills'>
             Skills
           </h1>
+
           <p>
             Occaecat elit adipisicing et dolore non sint. Ipsum fugiat ipsum qui
             in et ut mollit commodo. Culpa culpa officia officia aute occaecat
@@ -183,7 +194,7 @@ const Home = () => {
           <br />
           <br />
 
-          <h1 className='title' ref={portfolio}>
+          <h1 className='title' ref={portfolio} id='portfolio'>
             Portfolio
           </h1>
           <p>
@@ -212,7 +223,7 @@ const Home = () => {
           <br />
           <br />
 
-          <h1 className='title' ref={social}>
+          <h1 className='title' ref={social} id='social'>
             Social
           </h1>
           <p>

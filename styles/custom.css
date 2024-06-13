@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+body {
+  font-family: 'Audiowide', cursive;
+  overflow-x: hidden;
+}
+
+/* More specific selectors */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: 'Audiowide', cursive !important;
+}
+
+.navTitle {
+  font-family: 'Audiowide', sans-serif;
+}
+
+.navTitle:hover {
+  color: #9130ff;
+  text-decoration: underline;
+  cursor: pointer;
+}

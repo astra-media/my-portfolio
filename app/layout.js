@@ -1,11 +1,7 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootswatch/dist/sketchy/bootstrap.min.css'
-import '../styles/custom.scss'
-import { Inter } from 'next/font/google'
-import '../styles/globals.css'
-import Header from '../components/Header'
-
-const inter = Inter({ subsets: ['latin'] })
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootswatch/dist/sketchy/bootstrap.min.css'
+import '../styles/custom.css'
+import Head from 'next/head'
 
 export const metadata = {
   title: 'M. Sakeeb',
@@ -15,10 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        {/* <Header /> */}
-        {children}
-      </body>
+      <Head></Head>
+      <body>{children}</body>
     </html>
   )
 }
