@@ -24,3 +24,14 @@ body h6 {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.highlights {
+  background-color: rgba(211, 211, 211, 0.537);
+  text-decoration: none;
+}
+
+.highlights:hover {
+  background-color: #9130ff26;
+  text-decoration: underline;
+  cursor: pointer;
+}

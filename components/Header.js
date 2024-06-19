@@ -63,18 +63,17 @@ const Header = ({ setScrollTo }) => {
                 </span>
                 <br />
                 <span
-                  onClick={() => setScrollTo('skills')}
-                  className='navTitle'
-                >
-                  Skills
-                </span>
-                <br />
-
-                <span
                   onClick={() => setScrollTo('portfolio')}
                   className='navTitle'
                 >
                   Portfolio
+                </span>
+                <br />
+                <span
+                  onClick={() => setScrollTo('skills')}
+                  className='navTitle'
+                >
+                  Skills
                 </span>
                 <br />
                 <span
@@ -84,12 +83,6 @@ const Header = ({ setScrollTo }) => {
                   Contact
                 </span>
                 <br />
-                <span
-                  onClick={() => setScrollTo('social')}
-                  className='navTitle'
-                >
-                  Social
-                </span>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

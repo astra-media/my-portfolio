@@ -11,6 +11,8 @@ import { TextPlugin } from 'gsap/TextPlugin'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import Link from 'next/link'
 
 const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
@@ -135,22 +137,72 @@ const Home = () => {
           className='vh-100 bg-secondary-subtle d-flex flex-column justify-content-between align-items-center'
         >
           <div
-            className='container d-flex align-items-center justify-content-center flex-grow-1'
+            className='container d-flex flex-column align-items-center justify-content-center flex-grow-1'
             style={{ maxWidth: '600px' }}
           >
             <Card>
               <Card.Body>
+                <Card.Title className='d-flex justify-content-center mb-0 pb-0'>
+                  <h4 style={{ fontSize: '20px' }}>
+                    Hello, my name is M. Sakeeb.
+                  </h4>
+                </Card.Title>
                 <Card.Title className='d-flex justify-content-center'>
-                  <h5>Hello, my name is M. Sakeeb.</h5>
+                  <h4 style={{ fontSize: '16px' }} className='fst-italic'>
+                    {' '}
+                    (Preferred - Zephyr)
+                  </h4>
                 </Card.Title>
                 <Card.Text>
-                  Aute proident elit laborum ullamco sunt duis nisi proident ad
-                  ullamco minim Lorem quis culpa. Aliqua reprehenderit sit duis
-                  minim deserunt. Nisi adipisicing elit quis sunt reprehenderit
-                  nulla ad deserunt.
+                  I am a full-stack web developer and UI/UX javascript
+                  specialist. This page was build using Next.js. Codes are
+                  available on my{' '}
+                  <a
+                    target='_blank'
+                    href='https://github.com/astra-media/my-portfolio'
+                    className='highlights'
+                  >
+                    GitHub page.
+                  </a>{' '}
+                  Feel free to take a look at my latest project on my{' '}
+                  <span
+                    onClick={() => setScrollTo('portfolio')}
+                    className='highlights'
+                  >
+                    portfolio.
+                  </span>
+                </Card.Text>
+                <Card.Text className='d-flex justify-content-center'>
+                  <a
+                    href={`mailto: this.zephyr@gmail.com`}
+                    className='highlights'
+                  >
+                    this.zephyr@gmail.com
+                  </a>
                 </Card.Text>
               </Card.Body>
             </Card>
+            <div className='m-2'>
+              <a
+                target='_blank'
+                href='https://www.linkedin.com/in/zephyr-astra/'
+              >
+                <FontAwesomeIcon
+                  style={{
+                    fontSize: '25px',
+                    marginRight: '10px',
+                    cursor: 'pointer',
+                  }}
+                  icon={faLinkedin}
+                />
+              </a>
+              <a target='_blank' href='https://github.com/astra-media'>
+                <FontAwesomeIcon
+                  style={{ fontSize: '25px', cursor: 'pointer' }}
+                  icon={faGithub}
+                />
+              </a>
+            </div>
           </div>
 
           <h5>SCROLL DOWN</h5>
@@ -178,22 +230,6 @@ const Home = () => {
 
       <Container>
         <div>
-          <h1 className='title' ref={skills} id='skills'>
-            Skills
-          </h1>
-
-          <p>
-            Occaecat elit adipisicing et dolore non sint. Ipsum fugiat ipsum qui
-            in et ut mollit commodo. Culpa culpa officia officia aute occaecat
-            consectetur ex aliqua velit officia. Adipisicing do magna aliqua
-            dolore fugiat eiusmod aliquip cillum dolore nisi et occaecat non.
-            Sit eiusmod commodo enim fugiat cillum. Nisi ad in anim nisi ullamco
-            nostrud. Anim mollit anim velit non.
-          </p>
-
-          <br />
-          <br />
-
           <h1 className='title' ref={portfolio} id='portfolio'>
             Portfolio
           </h1>
@@ -210,6 +246,21 @@ const Home = () => {
           <br />
           <br />
 
+          <h1 className='title' ref={skills} id='skills'>
+            Skills
+          </h1>
+
+          <p>
+            Occaecat elit adipisicing et dolore non sint. Ipsum fugiat ipsum qui
+            in et ut mollit commodo. Culpa culpa officia officia aute occaecat
+            consectetur ex aliqua velit officia. Adipisicing do magna aliqua
+            dolore fugiat eiusmod aliquip cillum dolore nisi et occaecat non.
+            Sit eiusmod commodo enim fugiat cillum. Nisi ad in anim nisi ullamco
+            nostrud. Anim mollit anim velit non.
+          </p>
+          <br />
+          <br />
+
           <h1 className='title' ref={contact}>
             Contact
           </h1>
@@ -218,23 +269,6 @@ const Home = () => {
             fugiat sunt. Ut irure nostrud consequat nisi consequat velit eiusmod
             id cupidatat id et voluptate Lorem. Anim ullamco excepteur mollit
             nostrud dolor ipsum non quis.
-          </p>
-
-          <br />
-          <br />
-
-          <h1 className='title' ref={social} id='social'>
-            Social
-          </h1>
-          <p>
-            Velit fugiat incididunt ex minim. Occaecat consectetur labore
-            reprehenderit tempor velit deserunt officia commodo sit duis
-            cupidatat tempor nostrud. Ea nostrud sint ad ipsum tempor incididunt
-            laboris incididunt sint. Eu occaecat incididunt reprehenderit eu
-            cupidatat ullamco eu Lorem. Anim sunt qui ipsum ullamco do
-            adipisicing sint in nostrud esse reprehenderit consectetur sint.
-            Duis enim id sint mollit laboris dolor consequat pariatur est
-            deserunt. Incididunt occaecat voluptate officia magna minim.
           </p>
         </div>
       </Container>
