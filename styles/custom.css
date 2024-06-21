@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 body {
-  font-family: 'Audiowide', cursive;
+  /* font-family: 'Audiowide', cursive; */
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -12,11 +13,11 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  font-family: 'Audiowide', cursive !important;
+  font-family: 'Audiowide', Arial, sans-serif !important;
 }
 
 .navTitle {
-  font-family: 'Audiowide', sans-serif;
+  font-family: 'Audiowide', Arial, sans-serif;
 }
 
 .navTitle:hover {
