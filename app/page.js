@@ -89,7 +89,15 @@ const Home = () => {
       })
       .from('#about', {
         opacity: 0,
-        duration: 1.5,
+        duration: 0.5,
+      })
+      .from('.aboutText1', {
+        text: '',
+        duration: 0.8,
+      })
+      .from('.aboutText2', {
+        text: '',
+        duration: 1,
       })
       .to('#scrollDown', {
         y: '+=20',
@@ -138,47 +146,45 @@ const Home = () => {
         >
           <div
             className='container d-flex flex-column align-items-center justify-content-center flex-grow-1'
-            style={{ maxWidth: '600px' }}
+            style={{ maxWidth: '700px' }}
           >
-            <Card>
+            <Card className='mt-4'>
               <Card.Body>
-                <Card.Title className='d-flex justify-content-center mb-0 pb-0'>
-                  <h4 style={{ fontSize: '20px' }}>
+                <Card.Title className='d-flex justify-content-center'>
+                  <h4 className='aboutText1' style={{ fontSize: '20px' }}>
                     Hello, my name is M. Sakeeb.
                   </h4>
                 </Card.Title>
-                <Card.Title className='d-flex justify-content-center'>
-                  <h4 style={{ fontSize: '16px' }} className='fst-italic'>
-                    {' '}
-                    (Preferred - Zephyr)
-                  </h4>
-                </Card.Title>
+
                 <Card.Text>
-                  I am a full-stack web developer and UI/UX javascript
-                  specialist. This page was build using Next.js. Codes are
-                  available on my{' '}
-                  <a
-                    target='_blank'
-                    href='https://github.com/astra-media/my-portfolio'
-                    className='highlights'
-                  >
-                    GitHub page.
-                  </a>{' '}
-                  Feel free to take a look at my latest project on my{' '}
-                  <span
-                    onClick={() => setScrollTo('portfolio')}
-                    className='highlights'
-                  >
-                    portfolio.
+                  <span className='aboutText2'>
+                    I am a full-stack web developer and UI/UX JavaScript
+                    specialist with expertise in React, Next.js, and Express.js.
+                    My preferred name is Zephyr. My primary focus is on building
+                    intuitive and robust web applications. <br />
+                    One of my standout projects is an e-commerce website that
+                    demonstrates my ability to create seamless online shopping
+                    experiences with modern web technologies. Additionally, I
+                    have worked on various other projects that highlight my
+                    diverse skill set beyond web development. <br />
+                    Explore my e-commerce project and other notable works below.
+                    Feel free to visit my{' '}
+                    <a
+                      target='_blank'
+                      href='https://github.com/astra-media'
+                      className='highlights'
+                    >
+                      GitHub
+                    </a>{' '}
+                    page for more examples of my work. For access to private
+                    repositories or any inquiries, please reach out to me at{' '}
+                    <a
+                      href={`mailto: this.zephyr@gmail.com`}
+                      className='highlights'
+                    >
+                      this.zephyr@gmail.com
+                    </a>
                   </span>
-                </Card.Text>
-                <Card.Text className='d-flex justify-content-center'>
-                  <a
-                    href={`mailto: this.zephyr@gmail.com`}
-                    className='highlights'
-                  >
-                    this.zephyr@gmail.com
-                  </a>
                 </Card.Text>
               </Card.Body>
             </Card>
