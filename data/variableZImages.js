@@ -1,6 +1,6 @@
 const variableZImages = [
   '/images/variableZ/home.jpg',
-  '/images/variableZ/login.jpg',
+  '/images/variableZ/logIn.jpg',
   '/images/variableZ/productManager.jpg',
   '/images/variableZ/editProduct.jpg',
 ]
