@@ -20,7 +20,7 @@ const Header = ({ setScrollTo }) => {
       <Navbar
         key={false}
         expand={false}
-        className='navbar d-flex justify-content-end position-fixed top-0 end-0 z-3'
+        className='navbar d-flex justify-content-end position-fixed top-0 end-0 mx-2 z-3'
         data-bs-theme='dark'
         style={{
           borderColor: 'transparent',
@@ -58,27 +58,30 @@ const Header = ({ setScrollTo }) => {
                 className='justify-content-end flex-grow-1 pe-3'
                 onClick={() => setShow(false)}
               >
-                <span onClick={() => setScrollTo('about')} className='navTitle'>
+                <span
+                  onClick={() => setScrollTo('about')}
+                  className='navTitle mb-2'
+                >
                   About
                 </span>
                 <br />
                 <span
                   onClick={() => setScrollTo('portfolio')}
-                  className='navTitle'
+                  className='navTitle mb-2'
                 >
                   Portfolio
                 </span>
                 <br />
                 <span
                   onClick={() => setScrollTo('skills')}
-                  className='navTitle'
+                  className='navTitle mb-2'
                 >
                   Skills
                 </span>
                 <br />
                 <span
                   onClick={() => setScrollTo('contact')}
-                  className='navTitle'
+                  className='navTitle mb-2'
                 >
                   Contact
                 </span>

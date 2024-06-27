@@ -12,7 +12,7 @@ import { TextPlugin } from 'gsap/TextPlugin'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import Link from 'next/link'
+import Portfolio from '@/components/Portfolio'
 
 const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
@@ -111,7 +111,7 @@ const Home = () => {
       gsap.from(x, {
         scrollTrigger: {
           trigger: x,
-          toggleActions: 'restart none restart none',
+          toggleActions: 'restart none none none',
         },
         delay: 0.1,
         opacity: 0,
@@ -143,12 +143,13 @@ const Home = () => {
         <div
           id='about'
           className='vh-100 bg-secondary-subtle d-flex flex-column justify-content-between align-items-center'
+          style={{ minHeight: '550px' }}
         >
           <div
             className='container d-flex flex-column align-items-center justify-content-center flex-grow-1'
             style={{ maxWidth: '700px' }}
           >
-            <Card className='mt-4'>
+            <Card style={{ marginTop: '5vh' }}>
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
                   <h4 className='aboutText1' style={{ fontSize: '20px' }}>
@@ -235,48 +236,10 @@ const Home = () => {
       <br />
 
       <Container>
-        <div>
-          <h1 className='title' ref={portfolio} id='portfolio'>
-            Portfolio
-          </h1>
-          <p>
-            Enim aute officia aliquip dolor pariatur ut Lorem mollit qui duis
-            tempor ea ullamco dolore. Mollit pariatur nisi incididunt magna anim
-            est esse quis dolore voluptate laboris sit. Commodo culpa id aliquip
-            anim eiusmod laborum elit. Eiusmod fugiat esse consectetur tempor
-            est ipsum veniam labore tempor dolore amet. Pariatur et consectetur
-            exercitation cupidatat Lorem dolor amet elit sit irure dolore aliqua
-            eiusmod voluptate. Id incididunt consectetur culpa ex.
-          </p>
-
-          <br />
-          <br />
-
-          <h1 className='title' ref={skills} id='skills'>
-            Skills
-          </h1>
-
-          <p>
-            Occaecat elit adipisicing et dolore non sint. Ipsum fugiat ipsum qui
-            in et ut mollit commodo. Culpa culpa officia officia aute occaecat
-            consectetur ex aliqua velit officia. Adipisicing do magna aliqua
-            dolore fugiat eiusmod aliquip cillum dolore nisi et occaecat non.
-            Sit eiusmod commodo enim fugiat cillum. Nisi ad in anim nisi ullamco
-            nostrud. Anim mollit anim velit non.
-          </p>
-          <br />
-          <br />
-
-          <h1 className='title' ref={contact}>
-            Contact
-          </h1>
-          <p>
-            Aliqua ea sit anim et minim proident ut et sunt ea irure ipsum
-            fugiat sunt. Ut irure nostrud consequat nisi consequat velit eiusmod
-            id cupidatat id et voluptate Lorem. Anim ullamco excepteur mollit
-            nostrud dolor ipsum non quis.
-          </p>
-        </div>
+        <h2 ref={portfolio} id='portfolio'>
+          Portfolio
+        </h2>
+        <Portfolio />
       </Container>
     </>
   )
