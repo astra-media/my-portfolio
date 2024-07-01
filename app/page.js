@@ -236,10 +236,9 @@ const Home = () => {
       <br />
 
       <Container>
-        <h2 ref={portfolio} id='portfolio'>
-          Portfolio
-        </h2>
-        <Portfolio />
+        <div ref={portfolio} id='portfolio'>
+          <Portfolio />
+        </div>
       </Container>
     </>
   )
