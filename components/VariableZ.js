@@ -13,7 +13,7 @@ import 'swiper/css/navigation'
 
 import variableZImages from '@/data/variableZImages'
 
-const Portfolio = () => {
+const VariableZ = () => {
   return (
     <div>
       <h4 className='title'>
@@ -147,4 +147,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default VariableZ

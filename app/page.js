@@ -12,7 +12,8 @@ import { TextPlugin } from 'gsap/TextPlugin'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import Portfolio from '@/components/Portfolio'
+import VariableZ from '@/components/VariableZ'
+import OtherProjects from '@/components/OtherProjects'
 
 const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
@@ -237,7 +238,10 @@ const Home = () => {
 
       <Container>
         <div ref={portfolio} id='portfolio'>
-          <Portfolio />
+          <VariableZ />
+        </div>
+        <div>
+          <OtherProjects />
         </div>
       </Container>
     </>
