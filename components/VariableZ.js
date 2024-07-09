@@ -16,9 +16,7 @@ import variableZImages from '@/data/variableZImages'
 const VariableZ = () => {
   return (
     <div>
-      <h4 className='title'>
-        Variable Z: A Comprehensive Full-Stack E-Commerce Web Application
-      </h4>
+      <h4>Variable Z: A Comprehensive Full-Stack E-Commerce Web Application</h4>
 
       <div className='d-flex justify-content-between'>
         <a target='_blank' href='https://www.variablezstore.com/'>

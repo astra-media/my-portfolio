@@ -11,7 +11,7 @@ const OtherProjects = () => {
       <h4>Other Projects:</h4>
       <p>Click on the cards below to see full project details</p>
       <Row>
-        <Col xs={12} sm={12} md={4} lg={4} xl={3} className='p-2'>
+        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
           <ProjectCard
             image={'/images/portfolio/portfolioCard.png'}
             title={'Portfolio'}
@@ -21,7 +21,7 @@ const OtherProjects = () => {
             modalComponent={<Portfolio />}
           />
         </Col>
-        <Col xs={12} sm={12} md={4} lg={4} xl={3} className='p-2'>
+        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
           <ProjectCard
             image={'/images/portfolio/portfolioCard.png'}
             title={'Smart Thermostat - IOT Project'}

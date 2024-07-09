@@ -16,7 +16,8 @@ body h6 {
   font-family: 'Audiowide', Arial, sans-serif !important;
 }
 
-.navTitle {
+.navTitle,
+.cardTitle {
   font-family: 'Audiowide', Arial, sans-serif;
 }
 

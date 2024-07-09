@@ -36,21 +36,28 @@ const ProjectCard = ({ image, title, description, modalComponent }) => {
     <>
       <Card
         ref={cardRef}
-        className={`overflow-hidden ${styles.card} p-3`}
+        className={`overflow-hidden`}
+        style={{
+          cursor: 'pointer',
+          padding: '5px',
+          height: '16rem',
+          maxWidth: '250px',
+          marginBottom: '2px',
+        }}
         onClick={handleShow}
       >
         <Card.Img
           variant='top'
           src={image}
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.2)',
             objectFit: 'contain',
             borderRadius: '5%',
             height: '10rem',
+            marginBottom: '2px',
           }}
         />
-        <Card.Title>
-          <h5>{title}</h5>
+        <Card.Title as='strong' className='cardTitle'>
+          {title}
         </Card.Title>
         <div ref={previewRef} className={`${styles.preview} p-3`}>
           <Card.Text>{description}</Card.Text>
