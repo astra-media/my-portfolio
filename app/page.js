@@ -14,6 +14,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import VariableZ from '@/components/VariableZ'
 import OtherProjects from '@/components/OtherProjects'
+import Resume from '@/components/Resume'
 
 const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
@@ -242,6 +243,9 @@ const Home = () => {
         </div>
         <div>
           <OtherProjects />
+        </div>
+        <div>
+          <Resume />
         </div>
       </Container>
     </>

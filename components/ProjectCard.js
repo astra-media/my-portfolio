@@ -64,7 +64,7 @@ const ProjectCard = ({ image, title, description, modalComponent }) => {
         </div>
       </Card>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} size='xl' onHide={handleClose}>
         <Modal.Header closeButton>{title}</Modal.Header>
         <Modal.Body>{modalComponent}</Modal.Body>
         <Modal.Footer>
