@@ -8,7 +8,7 @@ const Resume = () => {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
   return (
-    <div className='d-flex flex-column justify-content-center p-3'>
+    <div className='d-flex flex-column justify-content-center'>
       <div>
         <div className='mb-2'>
           <Button onClick={handleShow} style={{ marginRight: '10px' }}>

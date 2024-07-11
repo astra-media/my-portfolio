@@ -15,7 +15,7 @@ import { variableZ } from '@/data/imagesPath'
 
 const VariableZ = () => {
   return (
-    <div className='p-3'>
+    <div>
       <h4>Variable Z: A Comprehensive Full-Stack E-Commerce Web Application</h4>
 
       <div className='d-flex justify-content-between'>

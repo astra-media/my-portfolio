@@ -7,7 +7,7 @@ import SmartThermostat from './Modal/SmartThermostat'
 
 const OtherProjects = () => {
   return (
-    <div className='p-3'>
+    <div>
       <p>Click on the cards below to see full project details</p>
       <Row>
         <Col xs={6} sm={6} md={4} lg={4} xl={3}>
