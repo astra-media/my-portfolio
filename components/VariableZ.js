@@ -11,11 +11,11 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import variableZImages from '@/data/variableZImages'
+import { variableZ } from '@/data/imagesPath'
 
 const VariableZ = () => {
   return (
-    <div>
+    <div className='p-3'>
       <h4>Variable Z: A Comprehensive Full-Stack E-Commerce Web Application</h4>
 
       <div className='d-flex justify-content-between'>
@@ -64,14 +64,14 @@ const VariableZ = () => {
         }}
         pagination={{
           clickable: true,
-          el: '.swiper-custom-pagination',
+          el: '#variableZ-pagination',
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
       >
-        {variableZImages.length > 0 && (
+        {variableZ.length > 0 && (
           <>
-            {variableZImages.map((image, index) => (
+            {variableZ.map((image, index) => (
               <SwiperSlide key={index}>
                 <Image
                   style={{
@@ -90,16 +90,16 @@ const VariableZ = () => {
         )}
       </Swiper>
       <div
+        id='variableZ-pagination'
         style={{
           textAlign: 'center',
           marginLeft: 'auto',
           marginRight: 'auto',
           cursor: 'pointer',
         }}
-        className='swiper-custom-pagination'
       />
       <br />
-      <h4>About this Project:</h4>
+      <h5>About this Project:</h5>
       <p>
         Variable Z is a full-stack e-commerce web application developed using
         Next.js and a custom Express server. This project, developed solely by
@@ -129,7 +129,7 @@ const VariableZ = () => {
         interested in discussing this project further, please feel free to reach
         out to me.
       </p>
-      <h4>Technical Sheet:</h4>
+      <h5>Technical Sheet:</h5>
       <p>The following technologies were utilized in this project:</p>
       <ul>
         <li>Next.js</li>

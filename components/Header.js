@@ -73,10 +73,10 @@ const Header = ({ setScrollTo }) => {
                 </span>
                 <br />
                 <span
-                  onClick={() => setScrollTo('skills')}
+                  onClick={() => setScrollTo('resume')}
                   className='navTitle mb-2'
                 >
-                  Skills
+                  Resume
                 </span>
                 <br />
                 <span

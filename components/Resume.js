@@ -8,22 +8,35 @@ const Resume = () => {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
   return (
-    <>
-      <h4>Resume:</h4>
-      <Button onClick={handleShow}>Show Resume</Button>
-
-      <Modal show={show} size='xl' onHide={handleClose}>
-        <Modal.Header closeButton>Resume</Modal.Header>
-        <Modal.Body>
-          <PdfViewer />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
-            Close
+    <div className='d-flex flex-column justify-content-center p-3'>
+      <div>
+        <div className='mb-2'>
+          <Button onClick={handleShow} style={{ marginRight: '10px' }}>
+            View Resume
           </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+          <a
+            href='/Resume_Sakeeb.pdf'
+            target='_blank'
+            download
+            style={{ textDecoration: 'none' }}
+          >
+            <Button>Download Resume</Button>
+          </a>
+        </div>
+
+        <Modal show={show} size='xl' onHide={handleClose}>
+          <Modal.Header closeButton>Resume</Modal.Header>
+          <Modal.Body>
+            <PdfViewer fileName='/Resume_Sakeeb.pdf' />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant='secondary' onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    </div>
   )
 }
 

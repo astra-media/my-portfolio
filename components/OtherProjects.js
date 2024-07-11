@@ -7,8 +7,7 @@ import SmartThermostat from './Modal/SmartThermostat'
 
 const OtherProjects = () => {
   return (
-    <>
-      <h4>Other Projects:</h4>
+    <div className='p-3'>
       <p>Click on the cards below to see full project details</p>
       <Row>
         <Col xs={6} sm={6} md={4} lg={4} xl={3}>
@@ -32,7 +31,22 @@ const OtherProjects = () => {
           />
         </Col>
       </Row>
-    </>
+      <br />
+      <div>
+        <h4>Looking for more?</h4>
+        <p>
+          Feel free to visit my{' '}
+          <a
+            target='_blank'
+            href='https://github.com/astra-media'
+            className='highlights'
+          >
+            GitHub
+          </a>{' '}
+          page for more examples of my work.
+        </p>
+      </div>
+    </div>
   )
 }
 

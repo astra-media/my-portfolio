@@ -15,15 +15,15 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import VariableZ from '@/components/VariableZ'
 import OtherProjects from '@/components/OtherProjects'
 import Resume from '@/components/Resume'
+import Contact from '@/components/Contact'
 
 const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
 
   const about = useRef()
-  const skills = useRef()
   const portfolio = useRef()
+  const resume = useRef()
   const contact = useRef()
-  const social = useRef()
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -40,17 +40,14 @@ const Home = () => {
     if (x == 'about') {
       about.current?.scrollIntoView()
     }
-    if (x == 'skills') {
-      skills.current?.scrollIntoView()
-    }
     if (x == 'portfolio') {
       portfolio.current?.scrollIntoView()
     }
+    if (x == 'resume') {
+      resume.current?.scrollIntoView()
+    }
     if (x == 'contact') {
       contact.current?.scrollIntoView()
-    }
-    if (x == 'social') {
-      social.current?.scrollIntoView()
     }
   }
 
@@ -182,10 +179,10 @@ const Home = () => {
                     page for more examples of my work. For access to private
                     repositories or any inquiries, please reach out to me at{' '}
                     <a
-                      href={`mailto: this.zephyr@gmail.com`}
+                      href={`mailto: infiiinityx@gmail.com`}
                       className='highlights'
                     >
-                      this.zephyr@gmail.com
+                      infiiinityx@gmail.com
                     </a>
                   </span>
                 </Card.Text>
@@ -239,13 +236,22 @@ const Home = () => {
 
       <Container>
         <div ref={portfolio} id='portfolio'>
+          <h4 style={{ textDecoration: 'underLine' }}>Portfolio</h4>
           <VariableZ />
-        </div>
-        <div>
+          <hr style={{ width: '50%' }} />
+          <h4 style={{ textDecoration: 'underLine' }}>Other Projects</h4>
+
           <OtherProjects />
         </div>
-        <div>
+
+        <hr />
+        <div ref={resume}>
+          <h4 style={{ textDecoration: 'underLine' }}>Resume</h4>
           <Resume />
+        </div>
+        <hr />
+        <div ref={contact}>
+          <Contact />
         </div>
       </Container>
     </>

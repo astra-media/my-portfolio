@@ -11,7 +11,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import variableZImages from '@/data/variableZImages'
+import { variableZ } from '@/data/imagesPath'
 
 const Portfolio = () => {
   return (
@@ -64,14 +64,14 @@ const Portfolio = () => {
         }}
         pagination={{
           clickable: true,
-          el: '.swiper-custom-pagination',
+          el: '#portfolio-pagination',
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
       >
-        {variableZImages.length > 0 && (
+        {variableZ.length > 0 && (
           <>
-            {variableZImages.map((image, index) => (
+            {variableZ.map((image, index) => (
               <SwiperSlide key={index}>
                 <Image
                   style={{
@@ -90,14 +90,15 @@ const Portfolio = () => {
         )}
       </Swiper>
       <div
+        id='portfolio-pagination'
         style={{
           textAlign: 'center',
           marginLeft: 'auto',
           marginRight: 'auto',
           cursor: 'pointer',
         }}
-        className='swiper-custom-pagination'
       />
+
       <br />
       <h4>About this Project:</h4>
       <p>
