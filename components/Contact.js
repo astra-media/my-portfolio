@@ -1,5 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Row, Col } from 'react-bootstrap'
+
 import {
   faLinkedin,
   faGithub,
@@ -8,9 +10,9 @@ import {
 
 const Contact = () => {
   return (
-    <>
-      <div>
-        <div className='d-flex flex-column align-items-center'>
+    <div className='mb-2'>
+      <Row>
+        <Col sm={12} md={8}>
           <h4 style={{ textDecoration: 'underLine' }}>Get in touch</h4>
 
           <p>
@@ -58,9 +60,19 @@ const Contact = () => {
               />
             </a>
           </div>
-        </div>
-      </div>
-    </>
+        </Col>
+        <Col sm={12} md={4}>
+          <div className='d-flex justify-content-center'>
+            <img
+              src='/selfPortrait.png'
+              alt='Self Portrait'
+              width='200'
+              className='mt-2'
+            ></img>
+          </div>
+        </Col>
+      </Row>
+    </div>
   )
 }
 
