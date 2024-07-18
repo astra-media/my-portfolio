@@ -25,7 +25,9 @@ const Resume = () => {
         </div>
 
         <Modal show={show} size='xl' onHide={handleClose}>
-          <Modal.Header closeButton>Resume</Modal.Header>
+          <Modal.Header closeButton>
+            <h4>Resume</h4>
+          </Modal.Header>
           <Modal.Body>
             <PdfViewer fileName='/Resume_Sakeeb.pdf' />
           </Modal.Body>

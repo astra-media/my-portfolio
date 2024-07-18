@@ -11,38 +11,15 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import { variableZ } from '@/data/imagesPath'
+import { portfolio } from '@/data/imagesPath'
 
 const Portfolio = () => {
   return (
     <div>
-      <h4>Variable Z: A Comprehensive Full-Stack E-Commerce Web Application</h4>
-
-      <div className='d-flex justify-content-between'>
-        <a target='_blank' href='https://www.variablezstore.com/'>
-          <Button className='info'>VISIT THE WEBSITE</Button>
+      <div className='d-flex justify-content-end'>
+        <a target='_blank' href='https://github.com/astra-media/my-portfolio'>
+          <Button className='info'>VISIT GITHUB</Button>
         </a>
-        <div className='mx-2'>
-          <a
-            target='_blank'
-            href='https://www.facebook.com/profile.php?id=61554236302602'
-          >
-            <FontAwesomeIcon
-              style={{
-                fontSize: '25px',
-                marginRight: '10px',
-                cursor: 'pointer',
-              }}
-              icon={faFacebook}
-            />
-          </a>
-          <a target='_blank' href='https://www.instagram.com/variablezstore/'>
-            <FontAwesomeIcon
-              style={{ fontSize: '25px', cursor: 'pointer' }}
-              icon={faInstagram}
-            />
-          </a>
-        </div>
       </div>
 
       <Swiper
@@ -69,9 +46,9 @@ const Portfolio = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
       >
-        {variableZ.length > 0 && (
+        {portfolio.length > 0 && (
           <>
-            {variableZ.map((image, index) => (
+            {portfolio.map((image, index) => (
               <SwiperSlide key={index}>
                 <Image
                   style={{
@@ -102,45 +79,40 @@ const Portfolio = () => {
       <br />
       <h4>About this Project:</h4>
       <p>
-        Variable Z is a full-stack e-commerce web application developed using
-        Next.js and a custom Express server. This project, developed solely by
-        me over the course of two years, aims to deliver a fully functional
-        e-commerce platform from scratch, offering seamless online shopping
-        experiences with cutting-edge web technologies.
+        This portfolio website, built with Next.js and exported as a static
+        site, showcases my recent projects as a full-stack web developer and
+        software engineer.
         <br />
         <br />
-        The application supports both physical and digital products, ensuring
-        secure authentication for digital goods upon purchase. It also includes
-        features for offering free and promotional products.
+        The objective of this project was to create a comprehensive display of
+        my work from the past few years. I aimed for a minimalist UI, employing
+        contemporary web technologies that are highly relevant in today's
+        development landscape.
         <br />
         <br />
-        This project incorporates robust data handling and security measures
-        using MongoDB, JSON Web Tokens (jsonwebtoken), and bcrypt.js. It
-        integrates popular services such as Google Login, PayPal, and Stripe
-        (including Apple Pay and Google Pay) for secure and versatile payment
-        options. Additionally, Nodemailer is used to automate email services for
-        order confirmations, support requests, and password resets.
+        The site features a simple navigation structure. Rather than multiple
+        pages, I opted for a single-page layout. I used reference elements for
+        smooth scrolling and modals to display content, ensuring a clutter-free
+        interface.
         <br />
         <br />
-        An easy-to-use admin interface is provided for managing orders, support
-        tickets, product edits, custom categories, and more.
+        To enhance user experience, I integrated GSAP for seamless element
+        transitions. Swiper.js was used for image showcasing, providing an
+        excellent touch slider experience. React PDF Viewer ensures that PDF
+        documents are displayed correctly across all devices, including iOS, PC,
+        and Android.
         <br />
         <br />
-        The code for this project is hosted in a private repository. If you are
-        interested in discussing this project further, please feel free to reach
-        out to me.
+        The code for this project is hosted in a public repository. Feel free to
+        explore it on my GitHub page.
       </p>
       <h4>Technical Sheet:</h4>
       <p>The following technologies were utilized in this project:</p>
       <ul>
         <li>Next.js</li>
-        <li>Redux Toolkit</li>
-        <li>Express.js</li>
-        <li>JSON Web Token (jsonwebtoken)</li>
-        <li>Nodemailer</li>
-        <li>Mongoose</li>
-        <li>Stripe Payment Services</li>
-        <li>PayPal Payment Services</li>
+        <li>GSAP</li>
+        <li>React PDF Viewer</li>
+        <li>Swiper</li>
       </ul>
     </div>
   )

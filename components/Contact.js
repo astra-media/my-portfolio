@@ -18,8 +18,8 @@ const Contact = () => {
           <p>
             If you wanna get in touch, talk to me about a project collaboration
             or just say hi, send an email to{' '}
-            <a href={`mailto: infiiinityx@gmail.com`} className='highlights'>
-              infiiinityx@gmail.com
+            <a href={`mailto: ****@gmail.com`} className='highlights'>
+              ****@gmail.com
             </a>
           </p>
           <h4>{`Let's get social`}</h4>

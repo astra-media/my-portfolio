@@ -163,7 +163,7 @@ const Home = () => {
                     My preferred name is Zephyr. My primary focus is on building
                     intuitive and robust web applications. <br />
                     One of my standout projects is an e-commerce website that
-                    demonstrates my ability to create seamless online shopping
+                    showcases my ability to create seamless online shopping
                     experiences with modern web technologies. Additionally, I
                     have worked on various other projects that highlight my
                     diverse skill set beyond web development. <br />
@@ -178,11 +178,8 @@ const Home = () => {
                     </a>{' '}
                     page for more examples of my work. For access to private
                     repositories or any inquiries, please reach out to me at{' '}
-                    <a
-                      href={`mailto: infiiinityx@gmail.com`}
-                      className='highlights'
-                    >
-                      infiiinityx@gmail.com
+                    <a href={`mailto: ****@gmail.com`} className='highlights'>
+                      ****@gmail.com
                     </a>
                   </span>
                 </Card.Text>

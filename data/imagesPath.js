@@ -5,4 +5,10 @@ const variableZ = [
   '/images/variableZ/editProduct.jpg',
 ]
 
-export { variableZ }
+const portfolio = [
+  '/images/portfolio/portfolio.jpg',
+  '/images/portfolio/about.jpg',
+  '/images/portfolio/contact.jpg',
+]
+
+export { variableZ, portfolio }
