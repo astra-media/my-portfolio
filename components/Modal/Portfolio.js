@@ -84,10 +84,10 @@ const Portfolio = () => {
         software engineer.
         <br />
         <br />
-        The objective of this project was to create a comprehensive display of
+        {`The objective of this project was to create a comprehensive display of
         my work from the past few years. I aimed for a minimalist UI, employing
         contemporary web technologies that are highly relevant in today's
-        development landscape.
+        development landscape.`}
         <br />
         <br />
         The site features a simple navigation structure. Rather than multiple
