@@ -11,4 +11,13 @@ const portfolio = [
   '/images/portfolio/contact.jpg',
 ]
 
-export { variableZ, portfolio }
+const smartThermostat = [
+  '/images/smartThermostat/controllerBoard.jpg',
+  '/images/smartThermostat/dashboard.jpg',
+  '/images/smartThermostat/fullSetup.jpg',
+  '/images/smartThermostat/iR_Photoresistor.jpg',
+  '/images/smartThermostat/ac_OnOff.jpg',
+  '/images/smartThermostat/cloudVariables.jpg',
+]
+
+export { variableZ, portfolio, smartThermostat }

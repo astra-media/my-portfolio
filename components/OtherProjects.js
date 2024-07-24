@@ -22,10 +22,10 @@ const OtherProjects = () => {
         </Col>
         <Col xs={6} sm={6} md={4} lg={4} xl={3}>
           <ProjectCard
-            image={''}
-            title={'Smart Thermostat - IOT Project'}
+            image={'/images/smartThermostat/controllerBoard.jpg'}
+            title={'Smart Thermostat for Air Conditioner - IoT Project'}
             description={
-              'Eu laboris ea irure dolore ad id cupidatat laborum cupidatat. Aute laboris enim cillum excepteur et laboris ad ex anim elit nulla occaecat. In nostrud dolore minim id esse commodo deserunt proident in consequat elit aute consectetur minim. Amet dolor consequat non aliqua adipisicing in ipsum tempor anim nostrud ad id mollit. Sint anim sint velit irure sunt dolore.'
+              'This IoT project allows users to remotely control the temperature and power state of their existing air conditioners without modifying the A/C control unit, making it a non-invasive and safe solution.'
             }
             modalComponent={<SmartThermostat />}
           />
