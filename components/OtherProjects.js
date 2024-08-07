@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard'
 
 import Portfolio from './Modal/Portfolio'
 import SmartThermostat from './Modal/SmartThermostat'
+import MachineLearning from './Modal/MachineLearning'
 
 const OtherProjects = () => {
   return (
@@ -28,6 +29,16 @@ const OtherProjects = () => {
               'This IoT project allows users to remotely control the temperature and power state of their existing air conditioners without modifying the A/C control unit, making it a non-invasive and safe solution.'
             }
             modalComponent={<SmartThermostat />}
+          />
+        </Col>
+        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
+          <ProjectCard
+            image={'/images/machineLearning/happy.jpg'}
+            title={'Machine Learning - Facial Expressions'}
+            description={
+              'This machine learning project, developed as part of my capstone project in 2018, utilizes Python, OpenCV (Open Source Computer Vision Library), and face datasets to train a computer to recognize human facial expressions.'
+            }
+            modalComponent={<MachineLearning />}
           />
         </Col>
       </Row>

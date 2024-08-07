@@ -20,4 +20,14 @@ const smartThermostat = [
   '/images/smartThermostat/cloudVariables.jpg',
 ]
 
-export { variableZ, portfolio, smartThermostat }
+const machineLearning = [
+  '/images/machineLearning/happy.jpg',
+  '/images/machineLearning/neutral.jpg',
+  '/images/machineLearning/sad.jpg',
+  '/images/machineLearning/angry.jpg',
+  '/images/machineLearning/instruction.jpg',
+  '/images/machineLearning/cli.jpg',
+  '/images/machineLearning/touchdesigner.jpg',
+]
+
+export { variableZ, portfolio, smartThermostat, machineLearning }
