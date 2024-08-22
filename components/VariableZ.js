@@ -16,11 +16,16 @@ import { variableZ } from '@/data/imagesPath'
 const VariableZ = () => {
   return (
     <div>
-      <h4>Variable Z: A Comprehensive Full-Stack E-Commerce Web Application</h4>
+      <h5 style={{ color: 'black' }}>
+        Variable Z: A Comprehensive Full-Stack E-Commerce Web Application
+      </h5>
 
-      <div className='d-flex justify-content-between'>
+      <div
+        className='d-flex justify-content-between'
+        style={{ marginBottom: '10px', marginTop: '10px' }}
+      >
         <a target='_blank' href='https://www.variablezstore.com/'>
-          <Button className='info'>VISIT THE WEBSITE</Button>
+          <Button className='button-style'>Visit The Website</Button>
         </a>
         <div className='mx-2'>
           <a
@@ -28,17 +33,26 @@ const VariableZ = () => {
             href='https://www.facebook.com/profile.php?id=61554236302602'
           >
             <FontAwesomeIcon
+              className='add-shadow'
               style={{
                 fontSize: '25px',
                 marginRight: '10px',
                 cursor: 'pointer',
+                color: '#1877F2',
+                backgroundColor: 'white',
+                borderRadius: '50%',
               }}
               icon={faFacebook}
             />
           </a>
           <a target='_blank' href='https://www.instagram.com/variablezstore/'>
             <FontAwesomeIcon
-              style={{ fontSize: '25px', cursor: 'pointer' }}
+              className='add-shadow'
+              style={{
+                fontSize: '25px',
+                cursor: 'pointer',
+                backgroundColor: 'white',
+              }}
               icon={faInstagram}
             />
           </a>
@@ -99,7 +113,7 @@ const VariableZ = () => {
         }}
       />
       <br />
-      <h5>About this Project:</h5>
+      <h5 style={{ color: 'black' }}>About this Project</h5>
       <p>
         Variable Z is a full-stack e-commerce web application developed using
         Next.js and a custom Express server. This project, developed solely by
@@ -129,7 +143,7 @@ const VariableZ = () => {
         interested in discussing this project further, please feel free to reach
         out to me.
       </p>
-      <h5>Technical Sheet:</h5>
+      <h5 style={{ color: 'black' }}>Technical Sheet</h5>
       <p>The following technologies were utilized in this project:</p>
       <ul>
         <li>Next.js</li>

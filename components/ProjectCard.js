@@ -56,7 +56,7 @@ const ProjectCard = ({ image, title, description, modalComponent }) => {
             marginBottom: '2px',
           }}
         />
-        <Card.Title as='strong' className='cardTitle'>
+        <Card.Title className='cardTitle' style={{ fontSize: '18px' }}>
           {title}
         </Card.Title>
         <div ref={previewRef} className={`${styles.preview} p-3`}>
@@ -66,11 +66,11 @@ const ProjectCard = ({ image, title, description, modalComponent }) => {
 
       <Modal show={show} size='xl' onHide={handleClose}>
         <Modal.Header closeButton>
-          <h4>{title}</h4>
+          <h3 style={{ fontWeight: 'bolder' }}>{title}</h3>
         </Modal.Header>
         <Modal.Body>{modalComponent}</Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
+          <Button className='button-style' onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

@@ -13,7 +13,9 @@ const Contact = () => {
     <div className='mb-2'>
       <Row>
         <Col sm={12} md={8}>
-          <h4 style={{ textDecoration: 'underLine' }}>Get in touch</h4>
+          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
+            Get in touch
+          </h3>
 
           <p>
             If you wanna get in touch, talk to me about a project collaboration
@@ -22,26 +24,32 @@ const Contact = () => {
               ****@gmail.com
             </a>
           </p>
-          <h4>{`Let's get social`}</h4>
+          <h5 style={{ color: 'black' }}>{`Let's get social`}</h5>
           <p>Follow me on LinkedIn, GitHub & YouTube</p>
           <div>
             <a target='_blank' href='https://www.linkedin.com/in/zephyr-astra/'>
               <FontAwesomeIcon
+                className='add-shadow'
                 style={{
                   fontSize: '25px',
                   cursor: 'pointer',
                   maxHeight: '25px',
+                  color: '#0077B5',
+                  backgroundColor: 'white',
                 }}
                 icon={faLinkedin}
               />
             </a>
             <a target='_blank' href='https://github.com/astra-media'>
               <FontAwesomeIcon
+                className='add-shadow'
                 style={{
                   fontSize: '25px',
                   marginInline: '10px',
                   cursor: 'pointer',
                   maxHeight: '25px',
+                  backgroundColor: 'white',
+                  borderRadius: '50%',
                 }}
                 icon={faGithub}
               />
@@ -51,10 +59,13 @@ const Contact = () => {
               href='https://www.youtube.com/channel/UCj7-VMoP_39-fpTPh9MJJWg'
             >
               <FontAwesomeIcon
+                className='add-shadow'
                 style={{
                   fontSize: '25px',
                   cursor: 'pointer',
                   maxHeight: '25px',
+                  color: '#FF0000',
+                  backgroundColor: 'white',
                 }}
                 icon={faYoutube}
               />

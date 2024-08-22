@@ -128,13 +128,13 @@ const Home = () => {
           id='intro-slider'
           className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column justify-content-center gap-4 bg-secondary-subtle p-5'
         >
-          <h1 id='title-1' className='display-1'>
+          <h1 style={{ color: 'black' }} id='title-1' className='display-1'>
             Software Engineer
           </h1>
-          <h1 id='title-2' className='display-1'>
+          <h1 style={{ color: 'black' }} id='title-2' className='display-1'>
             Designer
           </h1>
-          <h1 id='title-3' className='display-1'>
+          <h1 style={{ color: 'black' }} id='title-3' className='display-1'>
             Freelancer
           </h1>
         </div>
@@ -148,10 +148,17 @@ const Home = () => {
             className='container d-flex flex-column align-items-center justify-content-center flex-grow-1'
             style={{ maxWidth: '700px' }}
           >
-            <Card style={{ marginTop: '5vh' }}>
+            <Card
+              style={{
+                marginTop: '5vh',
+                borderWidth: '5px',
+                borderColor: 'gray',
+                borderRadius: '2%',
+              }}
+            >
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
-                  <h4 className='aboutText1' style={{ fontSize: '20px' }}>
+                  <h4 className='aboutText1' style={{ fontWeight: 'bolder' }}>
                     Hello, my name is M. Sakeeb.
                   </h4>
                 </Card.Title>
@@ -191,24 +198,33 @@ const Home = () => {
                 href='https://www.linkedin.com/in/zephyr-astra/'
               >
                 <FontAwesomeIcon
+                  className='add-shadow'
                   style={{
                     fontSize: '25px',
                     marginRight: '10px',
                     cursor: 'pointer',
+                    color: '#0077B5',
+                    backgroundColor: 'white',
                   }}
                   icon={faLinkedin}
                 />
               </a>
               <a target='_blank' href='https://github.com/astra-media'>
                 <FontAwesomeIcon
-                  style={{ fontSize: '25px', cursor: 'pointer' }}
+                  className='add-shadow'
+                  style={{
+                    fontSize: '25px',
+                    cursor: 'pointer',
+                    backgroundColor: 'white',
+                    borderRadius: '50%',
+                  }}
                   icon={faGithub}
                 />
               </a>
             </div>
           </div>
 
-          <h5>SCROLL DOWN</h5>
+          <h5 style={{ color: 'black' }}>SCROLL DOWN</h5>
           <div id='scrollDown' style={{ marginBottom: '100px' }}>
             <FontAwesomeIcon
               style={{ fontSize: '25px' }}
@@ -233,17 +249,23 @@ const Home = () => {
 
       <Container>
         <div ref={portfolio} id='portfolio'>
-          <h4 style={{ textDecoration: 'underLine' }}>Portfolio</h4>
+          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
+            Portfolio
+          </h3>
           <VariableZ />
           <hr style={{ width: '50%' }} />
-          <h4 style={{ textDecoration: 'underLine' }}>Other Projects</h4>
+          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
+            Other Projects
+          </h3>
 
           <OtherProjects />
         </div>
 
         <hr />
         <div ref={resume}>
-          <h4 style={{ textDecoration: 'underLine' }}>Resume</h4>
+          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
+            Resume
+          </h3>
           <Resume />
         </div>
         <hr />

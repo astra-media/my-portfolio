@@ -18,7 +18,7 @@ const Portfolio = () => {
     <div>
       <div className='d-flex justify-content-end'>
         <a target='_blank' href='https://github.com/astra-media/my-portfolio'>
-          <Button className='info'>VISIT GITHUB</Button>
+          <Button className='button-style'>Visit GitHub</Button>
         </a>
       </div>
 
@@ -77,7 +77,7 @@ const Portfolio = () => {
       />
 
       <br />
-      <h4>About this Project:</h4>
+      <h5 style={{ color: 'black' }}>About this Project:</h5>
       <p>
         This portfolio website, built with Next.js and exported as a static
         site, showcases my recent projects as a full-stack web developer and
@@ -106,7 +106,7 @@ const Portfolio = () => {
         The code for this project is hosted in a public repository. Feel free to
         explore it on my GitHub page.
       </p>
-      <h4>Technical Sheet:</h4>
+      <h5 style={{ color: 'black' }}>Technical Sheet:</h5>
       <p>The following technologies were utilized in this project:</p>
       <ul>
         <li>Next.js</li>

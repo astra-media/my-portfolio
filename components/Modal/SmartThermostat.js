@@ -21,7 +21,7 @@ const SmartThermostat = () => {
           target='_blank'
           href='https://github.com/astra-media/smart-thermostat-IoT'
         >
-          <Button className='info'>VISIT GITHUB</Button>
+          <Button className='button-style'>Visit GitHub</Button>
         </a>
       </div>
 
@@ -80,7 +80,7 @@ const SmartThermostat = () => {
       />
 
       <br />
-      <h4>About this Project:</h4>
+      <h5 style={{ color: 'black' }}>About this Project:</h5>
       <p>
         This IoT project allows users to remotely control the temperature and
         power state of their existing air conditioners without modifying the A/C
@@ -102,7 +102,7 @@ const SmartThermostat = () => {
         values. Note that the code includes variables for controlling other
         devices, which are not covered in this section.
       </p>
-      <h4>Operation:</h4>
+      <h5 style={{ color: 'black' }}>Operation:</h5>
       <p>
         {`To control the A/C, the project uses IR remote commands. The NEC
         protocol is used to obtain the necessary IR codes from the A/C remote
@@ -128,7 +128,7 @@ const SmartThermostat = () => {
         The code for this project is hosted in a public repository. Feel free to
         explore it on my GitHub page.
       </p>
-      <h4>Technical Sheet:</h4>
+      <h5 style={{ color: 'black' }}>Technical Sheet:</h5>
       <p>
         {`The following components were utilized in this project. For wiring
         details, please refer to each component's datasheet.`}

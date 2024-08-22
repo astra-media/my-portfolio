@@ -11,7 +11,11 @@ const Resume = () => {
     <div className='d-flex flex-column justify-content-center'>
       <div>
         <div className='mb-2'>
-          <Button onClick={handleShow} style={{ marginRight: '10px' }}>
+          <Button
+            className='button-style'
+            onClick={handleShow}
+            style={{ marginRight: '10px' }}
+          >
             View Resume
           </Button>
           <a
@@ -20,19 +24,19 @@ const Resume = () => {
             download
             style={{ textDecoration: 'none' }}
           >
-            <Button>Download Resume</Button>
+            <Button className='button-style'>Download Resume</Button>
           </a>
         </div>
 
         <Modal show={show} size='xl' onHide={handleClose}>
           <Modal.Header closeButton>
-            <h4>Resume</h4>
+            <h3 style={{ fontWeight: 'bolder' }}>Resume</h3>
           </Modal.Header>
           <Modal.Body>
             <PdfViewer fileName='/Resume_Sakeeb.pdf' />
           </Modal.Body>
           <Modal.Footer>
-            <Button variant='secondary' onClick={handleClose}>
+            <Button className='button-style' onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>

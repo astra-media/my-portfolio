@@ -44,7 +44,7 @@ const OtherProjects = () => {
       </Row>
       <br />
       <div>
-        <h4>Looking for more?</h4>
+        <h5 style={{ color: 'black' }}>Looking for more?</h5>
         <p>
           Feel free to visit my{' '}
           <a

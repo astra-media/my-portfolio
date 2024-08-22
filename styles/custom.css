@@ -14,15 +14,22 @@ body h4,
 body h5,
 body h6 {
   font-family: 'Audiowide', Arial, sans-serif !important;
+  color: #d87d27;
+}
+
+p,
+ul {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
 
 .navTitle,
 .cardTitle {
-  font-family: 'Audiowide', Arial, sans-serif;
+  font-family: 'Audiowide', Arial, sans-serif !important;
 }
 
 .navTitle:hover {
-  color: #9130ff;
+  color: #d87d27;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -44,4 +51,21 @@ body h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button-style {
+  color: black !important;
+  font-family: 'Audiowide', Arial, sans-serif !important;
+  font-style: italic !important;
+  background-color: white !important;
+  border-color: gray !important;
+  border-width: 3px !important;
+}
+
+.button-style:hover {
+  filter: drop-shadow(1px 1px 4px);
+}
+
+.add-shadow:hover {
+  filter: drop-shadow(1px 1px 4px);
 }
