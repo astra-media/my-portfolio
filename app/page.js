@@ -68,6 +68,10 @@ const Home = () => {
         }
       )
       .to(['#title-1', '#title-2', '#title-3'], {
+        color: '#d87d27',
+        stagger: 0.4,
+      })
+      .to(['#title-1', '#title-2', '#title-3'], {
         opacity: 0,
         y: '-=30',
         delay: 0.3,
@@ -158,9 +162,9 @@ const Home = () => {
             >
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
-                  <h4 className='aboutText1' style={{ fontWeight: 'bolder' }}>
+                  <h2 className='aboutText1' style={{ fontWeight: 'bolder' }}>
                     Hello, my name is M. Sakeeb.
-                  </h4>
+                  </h2>
                 </Card.Title>
 
                 <Card.Text>
@@ -236,7 +240,9 @@ const Home = () => {
           id='welcome'
           className='vh-100 vw-100 position-absolute top-0 left-0 d-flex justify-content-center align-items-center bg-secondary-subtle'
         >
-          <h1 style={{ color: 'black', fontWeight: 'bold', fontSize: '60px' }}>
+          <h1
+            style={{ color: '#d87d27', fontWeight: 'bold', fontSize: '60px' }}
+          >
             Welcome
           </h1>
         </div>
@@ -249,23 +255,16 @@ const Home = () => {
 
       <Container>
         <div ref={portfolio} id='portfolio'>
-          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
-            Portfolio
-          </h3>
+          <h2 style={{ fontWeight: 'bolder' }}>Portfolio</h2>
           <VariableZ />
           <hr style={{ width: '50%' }} />
-          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
-            Other Projects
-          </h3>
-
+          <h2 style={{ fontWeight: 'bolder' }}>Other Projects</h2>
           <OtherProjects />
         </div>
 
         <hr />
         <div ref={resume}>
-          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
-            Resume
-          </h3>
+          <h2 style={{ fontWeight: 'bolder' }}>Resume</h2>
           <Resume />
         </div>
         <hr />

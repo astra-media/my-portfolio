@@ -13,10 +13,7 @@ const Contact = () => {
     <div className='mb-2'>
       <Row>
         <Col sm={12} md={8}>
-          <h3 style={{ textDecoration: 'underLine', fontWeight: 'bolder' }}>
-            Get in touch
-          </h3>
-
+          <h2 style={{ fontWeight: 'bolder' }}>Get in touch</h2>
           <p>
             If you wanna get in touch, talk to me about a project collaboration
             or just say hi, send an email to{' '}
