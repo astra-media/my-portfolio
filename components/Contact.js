@@ -72,7 +72,7 @@ const Contact = () => {
         <Col sm={12} md={4}>
           <div className='d-flex justify-content-center'>
             <img
-              src='/selfPortrait.png'
+              src='/selfPortrait/selfPortrait.png'
               alt='Self Portrait'
               width='200'
               className='mt-2'
