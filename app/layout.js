@@ -7,6 +7,7 @@ export const metadata = {
   description: 'Web Portfolio for M. Sakeeb.',
   icons: {
     icon: '/selfPortrait/selfPortrait_favicon.png',
+    apple: '/selfPortrait/selfPortrait_apple-icon.png',
   },
   openGraph: {
     title: 'M. Sakeeb',
