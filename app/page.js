@@ -163,7 +163,7 @@ const Home = () => {
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
                   <h2 className='aboutText1' style={{ fontWeight: 'bolder' }}>
-                    Hello, my name is M. Sakeeb.
+                    Hello, my name is Mohammad Sakeeb.
                   </h2>
                 </Card.Title>
 
@@ -171,8 +171,8 @@ const Home = () => {
                   <span className='aboutText2'>
                     I am a full-stack web developer and UI/UX JavaScript
                     specialist with expertise in React, Next.js, and Express.js.
-                    My preferred name is Zephyr. My primary focus is on building
-                    intuitive and robust web applications. <br />
+                    My primary focus is on building intuitive and robust web
+                    applications. <br />
                     One of my standout projects is an e-commerce website that
                     showcases my ability to create seamless online shopping
                     experiences with modern web technologies. Additionally, I
