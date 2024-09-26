@@ -17,8 +17,8 @@ const Contact = () => {
           <p>
             If you wanna get in touch, talk to me about a project collaboration
             or just say hi, send an email to{' '}
-            <a href={`mailto: ****@gmail.com`} className='highlights'>
-              ****@gmail.com
+            <a href={`mailto: mohammad@sakeeb.dev`} className='highlights'>
+              mohammad@sakeeb.dev
             </a>
           </p>
           <h5 style={{ color: 'black' }}>{`Let's get social`}</h5>

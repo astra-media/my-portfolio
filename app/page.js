@@ -189,8 +189,11 @@ const Home = () => {
                     </a>{' '}
                     page for more examples of my work. For access to private
                     repositories or any inquiries, please reach out to me at{' '}
-                    <a href={`mailto: ****@gmail.com`} className='highlights'>
-                      ****@gmail.com
+                    <a
+                      href={`mailto: mohammad@sakeeb.dev`}
+                      className='highlights'
+                    >
+                      mohammad@sakeeb.dev
                     </a>
                   </span>
                 </Card.Text>

@@ -19,7 +19,7 @@ const Resume = () => {
             View Resume
           </Button>
           <a
-            href='/Resume_Sakeeb.pdf'
+            href='/resume_mohammad_sakeeb.pdf'
             target='_blank'
             download
             style={{ textDecoration: 'none' }}
@@ -33,7 +33,7 @@ const Resume = () => {
             <h3 style={{ fontWeight: 'bolder' }}>Resume</h3>
           </Modal.Header>
           <Modal.Body>
-            <PdfViewer fileName='/Resume_Sakeeb.pdf' />
+            <PdfViewer fileName='/resume_mohammad_sakeeb.pdf' />
           </Modal.Body>
           <Modal.Footer>
             <Button className='button-style' onClick={handleClose}>
