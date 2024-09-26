@@ -24,7 +24,7 @@ const Contact = () => {
           <h5 style={{ color: 'black' }}>{`Let's get social`}</h5>
           <p>Follow me on LinkedIn, GitHub & YouTube</p>
           <div>
-            <a target='_blank' href='https://www.linkedin.com/in/zephyr-astra/'>
+            <a target='_blank' href='https://www.linkedin.com/in/msakeeb/'>
               <FontAwesomeIcon
                 className='add-shadow'
                 style={{

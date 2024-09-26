@@ -200,10 +200,7 @@ const Home = () => {
               </Card.Body>
             </Card>
             <div className='m-2'>
-              <a
-                target='_blank'
-                href='https://www.linkedin.com/in/zephyr-astra/'
-              >
+              <a target='_blank' href='https://www.linkedin.com/in/msakeeb/'>
                 <FontAwesomeIcon
                   className='add-shadow'
                   style={{
