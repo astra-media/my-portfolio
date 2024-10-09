@@ -1,6 +1,9 @@
 {
-  "name": "my-portfolio",
-  "version": "0.1.0",
+  "name": "portfolio-sakeeb",
+  "version": "1.0.0",
+  "description": "Portfolio built with Next.js SSG",
+  "author": "Mohammad Sakeeb",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "dev": "next dev",
