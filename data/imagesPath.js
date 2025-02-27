@@ -30,4 +30,15 @@ const machineLearning = [
   '/images/machineLearning/touchdesigner.jpg',
 ]
 
-export { variableZ, portfolio, smartThermostat, machineLearning }
+const reactExpressStarter = [
+  '/images/reactExpressStarter/homeScreen.png',
+  '/images/reactExpressStarter/featuresScreen.png',
+]
+
+export {
+  variableZ,
+  portfolio,
+  smartThermostat,
+  machineLearning,
+  reactExpressStarter,
+}

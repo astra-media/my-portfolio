@@ -80,7 +80,7 @@ const MachineLearning = () => {
       />
 
       <br />
-      <h5 style={{ color: 'black' }}>About this Project</h5>
+      <h5>About this Project</h5>
       <p>
         {`This machine learning project, developed as part of my capstone project
         in 2018, utilizes Python, OpenCV (Open Source Computer Vision Library),
@@ -96,7 +96,7 @@ const MachineLearning = () => {
         socket (networking interface), which TouchDesigner then uses to generate
         interactive visuals corresponding to each emotion.
       </p>
-      <h5 style={{ color: 'black' }}>Operation</h5>
+      <h5>Operation</h5>
       <p>
         Once all required modules are installed, the following commands can be
         used:
@@ -120,7 +120,7 @@ const MachineLearning = () => {
         my GitHub page. This project was inspired by Paul van Gent's "Making an
         Emotion-Aware Music Player."`}
       </p>
-      <h5 style={{ color: 'black' }}>Technical Sheet</h5>
+      <h5>Technical Sheet</h5>
       <p>
         The following technologies were utilized in this project:
         <ul>
@@ -136,7 +136,7 @@ const MachineLearning = () => {
           <li>TouchDesigner by Derivative</li>
         </ul>
       </p>
-      <h5 style={{ color: 'black' }}>Reference</h5>
+      <h5>Reference</h5>
       <p>
         {`van Gent, P. (2016). Emotion Recognition With Python, OpenCV, and a Face
         Dataset. A tech blog about fun things with Python and embedded

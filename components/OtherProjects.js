@@ -5,6 +5,7 @@ import ProjectCard from './ProjectCard'
 import Portfolio from './Modal/Portfolio'
 import SmartThermostat from './Modal/SmartThermostat'
 import MachineLearning from './Modal/MachineLearning'
+import ReactExpressStarter from './Modal/ReactExpressStarter'
 
 const OtherProjects = () => {
   return (
@@ -13,8 +14,19 @@ const OtherProjects = () => {
       <Row>
         <Col xs={6} sm={6} md={4} lg={4} xl={3}>
           <ProjectCard
+            image={'/images/reactExpressStarter/homeScreen.png'}
+            title={'React + Express Starter Kit'}
+            description={
+              'A simple full-stack boilerplate template using Express, React + Vite, Redux Toolkit, and react-router-dom. This template provides a solid foundation for developing modern web applications.'
+            }
+            modalComponent={<ReactExpressStarter />}
+          />
+        </Col>
+
+        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
+          <ProjectCard
             image={'/images/portfolio/portfolio.jpg'}
-            title={'Portfolio'}
+            title={'Next.js Static Exports - Portfolio'}
             description={
               'This portfolio website, built with Next.js and exported as a static site, showcases my recent projects as a full-stack web developer and software engineer.'
             }
@@ -52,7 +64,7 @@ const OtherProjects = () => {
             href='https://github.com/astra-media'
             className='highlights'
           >
-            GitHub
+            <stron>GitHub</stron>
           </a>{' '}
           page for more examples of my work.
         </p>

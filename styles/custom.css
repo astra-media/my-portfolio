@@ -34,10 +34,10 @@ ul {
   cursor: pointer;
 }
 
-.highlights {
+/* .highlights {
   background-color: rgba(211, 211, 211, 0.537);
   text-decoration: none;
-}
+} */
 
 .highlights:hover {
   background-color: #9130ff26;
@@ -68,4 +68,16 @@ ul {
 
 .add-shadow:hover {
   filter: drop-shadow(1px 1px 4px);
+}
+
+code {
+  background: #f4f4f4;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
 }
