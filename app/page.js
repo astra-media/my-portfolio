@@ -21,7 +21,7 @@ const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
 
   const about = useRef()
-  const portfolio = useRef()
+  const projects = useRef()
   const resume = useRef()
   const contact = useRef()
 
@@ -40,8 +40,8 @@ const Home = () => {
     if (x == 'about') {
       about.current?.scrollIntoView()
     }
-    if (x == 'portfolio') {
-      portfolio.current?.scrollIntoView()
+    if (x == 'projects') {
+      projects.current?.scrollIntoView()
     }
     if (x == 'resume') {
       resume.current?.scrollIntoView()
@@ -57,14 +57,13 @@ const Home = () => {
     let t1 = gsap.timeline()
     t1.to('#blankScreen', {
       xPercent: '-100',
-      duration: 1.5,
     })
       .from(
         ['#title-1', '#title-2', '#title-3'], //grouped in array
         {
           opacity: 0,
           y: '+=30',
-          stagger: 0.5, //allows each animation from array to have slight delay
+          stagger: 0.4, //allows each animation from array to have slight delay
         }
       )
       .to(['#title-1', '#title-2', '#title-3'], {
@@ -75,11 +74,11 @@ const Home = () => {
         opacity: 0,
         y: '-=30',
         delay: 0.3,
-        stagger: 0.5,
+        stagger: 0.4,
       })
       .to('#intro-slider', {
         xPercent: '-100',
-        duration: 1.3,
+        duration: 1,
       })
       .from('#welcome', {
         opacity: 0,
@@ -88,7 +87,7 @@ const Home = () => {
       .to('#welcome', {
         opacity: 0,
         yPercent: '-100',
-        duration: 1.3,
+        duration: 1,
       })
       .from('#about', {
         opacity: 0,
@@ -96,18 +95,11 @@ const Home = () => {
       })
       .from('.aboutText1', {
         text: '',
-        duration: 0.8,
+        duration: 1,
       })
       .from('.aboutText2', {
         text: '',
-        duration: 1,
-      })
-      .to('#scrollDown', {
-        y: '+=20',
-        ease: 'power1.inOut',
-        yoyo: true,
-        duration: 0.8,
-        repeat: Infinity,
+        duration: 2,
       })
 
     gsap.utils.toArray('.title').forEach((x, i) => {
@@ -130,17 +122,38 @@ const Home = () => {
       <div className='relative' ref={about}>
         <div
           id='intro-slider'
-          className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column justify-content-center gap-4 bg-secondary-subtle p-5'
+          className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column justify-content-center align-items-center gap-4 bg-secondary-subtle'
         >
-          <h1 style={{ color: 'black' }} id='title-1' className='display-1'>
-            Software Engineer
-          </h1>
-          <h1 style={{ color: 'black' }} id='title-2' className='display-1'>
-            Designer
-          </h1>
-          <h1 style={{ color: 'black' }} id='title-3' className='display-1'>
-            Freelancer
-          </h1>
+          <div>
+            <h1
+              style={{
+                color: 'black',
+                fontWeight: 'bold',
+                fontSize: '50px',
+                marginBottom: '40px',
+              }}
+              id='title-1'
+            >
+              Software Engineer
+            </h1>
+            <h1
+              style={{
+                color: 'black',
+                fontWeight: 'bold',
+                fontSize: '50px',
+                marginBottom: '40px',
+              }}
+              id='title-2'
+            >
+              Designer
+            </h1>
+            <h1
+              style={{ color: 'black', fontWeight: 'bold', fontSize: '50px' }}
+              id='title-3'
+            >
+              Freelancer
+            </h1>
+          </div>
         </div>
 
         <div
@@ -162,9 +175,9 @@ const Home = () => {
             >
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
-                  <h2 className='aboutText1' style={{ fontWeight: 'bolder' }}>
+                  <h3 className='aboutText1' style={{ fontWeight: 'bolder' }}>
                     Hello, my name is Mohammad Sakeeb.
-                  </h2>
+                  </h3>
                 </Card.Title>
 
                 <Card.Text>
@@ -228,20 +241,16 @@ const Home = () => {
             </div>
           </div>
 
-          <h5 style={{ color: 'black' }}>SCROLL DOWN</h5>
-          <div id='scrollDown' style={{ marginBottom: '100px' }}>
-            <FontAwesomeIcon
-              style={{ fontSize: '25px' }}
-              icon={faChevronDown}
-            />
-          </div>
+          <h5 className='mb-2' style={{ color: 'black' }}>
+            SCROLL DOWN <FontAwesomeIcon icon={faChevronDown} />
+          </h5>
         </div>
         <div
           id='welcome'
           className='vh-100 vw-100 position-absolute top-0 left-0 d-flex justify-content-center align-items-center bg-secondary-subtle'
         >
           <h1
-            style={{ color: '#d87d27', fontWeight: 'bold', fontSize: '60px' }}
+            style={{ color: '#d87d27', fontWeight: 'bold', fontSize: '50px' }}
           >
             Welcome
           </h1>
@@ -254,17 +263,17 @@ const Home = () => {
       <br />
 
       <Container>
-        <div ref={portfolio} id='portfolio'>
-          <h2 style={{ fontWeight: 'bolder' }}>Portfolio</h2>
+        <div ref={projects} id='projects'>
+          <h3 style={{ fontWeight: 'bolder' }}>Projects</h3>
           <VariableZ />
           <hr style={{ width: '50%' }} />
-          <h2 style={{ fontWeight: 'bolder' }}>Other Projects</h2>
+          <h3 style={{ fontWeight: 'bolder' }}>Other Projects</h3>
           <OtherProjects />
         </div>
 
         <hr />
         <div ref={resume}>
-          <h2 style={{ fontWeight: 'bolder' }}>Resume</h2>
+          <h3 style={{ fontWeight: 'bolder' }}>Resume</h3>
           <Resume />
         </div>
         <hr />

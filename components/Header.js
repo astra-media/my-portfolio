@@ -66,10 +66,10 @@ const Header = ({ setScrollTo }) => {
                 </span>
                 <br />
                 <span
-                  onClick={() => setScrollTo('portfolio')}
+                  onClick={() => setScrollTo('projects')}
                   className='navTitle mb-2'
                 >
-                  Portfolio
+                  Projects
                 </span>
                 <br />
                 <span

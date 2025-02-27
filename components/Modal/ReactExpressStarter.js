@@ -85,9 +85,9 @@ const ReactExpressStarter = () => {
       <>
         <p>
           A simple full-stack boilerplate template using{' '}
-          <strong>
+          <span style={{ fontWeight: 'bold' }}>
             Express, React + Vite, Redux Toolkit, and react-router-dom
-          </strong>
+          </span>
           .
           <br />
           This template provides a solid foundation for developing modern web
@@ -161,8 +161,10 @@ const ReactExpressStarter = () => {
         <h5>Running the Development Server</h5>
         <pre>npm run dev # Starts both frontend and backend servers</pre>
         <p>
-          Backend runs on <strong>http://localhost:5000/</strong>, frontend on{' '}
-          <strong>http://localhost:5173/</strong>.
+          Backend runs on{' '}
+          <span style={{ fontWeight: 'bold' }}>http://localhost:5000/</span>,
+          frontend on{' '}
+          <span style={{ fontWeight: 'bold' }}>http://localhost:5173/</span>.
         </p>
 
         <h5>Available Scripts</h5>
