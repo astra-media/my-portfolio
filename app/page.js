@@ -101,6 +101,11 @@ const Home = () => {
         text: '',
         duration: 2,
       })
+      .from('#scrollDown', {
+        opacity: 0,
+        delay: 3,
+        duration: 2,
+      })
 
     gsap.utils.toArray('.title').forEach((x, i) => {
       gsap.from(x, {
@@ -241,7 +246,7 @@ const Home = () => {
             </div>
           </div>
 
-          <h5 className='mb-2' style={{ color: 'black' }}>
+          <h5 id='scrollDown' className='mb-2' style={{ color: 'black' }}>
             SCROLL DOWN <FontAwesomeIcon icon={faChevronDown} />
           </h5>
         </div>
