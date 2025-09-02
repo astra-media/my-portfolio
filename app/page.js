@@ -20,6 +20,8 @@ import Contact from '@/components/Contact'
 const Home = () => {
   const [scrollTo, setScrollTo] = useState('')
 
+  const [titleFontSize, setTitleFontSize] = useState("50px")
+
   const about = useRef()
   const projects = useRef()
   const resume = useRef()
@@ -34,6 +36,23 @@ const Home = () => {
     if (scrollTo) {
       ExecuteScroll(scrollTo)
     }
+
+    //Adjust Title FontSize 
+    const handleResize = () => {
+      if (window.innerWidth >= 1000){
+        setTitleFontSize("50px");
+      } else {
+        setTitleFontSize("25px")
+      }
+    }
+
+    //run on mount
+    handleResize();
+
+    //listen for resize
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+
   }, [scrollTo])
 
   const ExecuteScroll = (x) => {
@@ -73,7 +92,7 @@ const Home = () => {
       .to(['#title-1', '#title-2', '#title-3'], {
         opacity: 0,
         y: '-=30',
-        delay: 0.3,
+        delay: 1,
         stagger: 0.4,
       })
       .to('#intro-slider', {
@@ -129,34 +148,34 @@ const Home = () => {
           id='intro-slider'
           className='vh-100 vw-100 position-absolute top-0 left-0 d-flex flex-column justify-content-center align-items-center gap-4 bg-secondary-subtle'
         >
-          <div>
+          <div style={{padding: '10px', maxWidth: '1000px'}}>
             <h1
               style={{
                 color: 'black',
                 fontWeight: 'bold',
-                fontSize: '50px',
+                fontSize: titleFontSize,
                 marginBottom: '40px',
               }}
               id='title-1'
             >
-              Software Engineer
+              Full-Stack Developer
             </h1>
             <h1
               style={{
                 color: 'black',
                 fontWeight: 'bold',
-                fontSize: '50px',
+                fontSize: titleFontSize,
                 marginBottom: '40px',
               }}
               id='title-2'
             >
-              Designer
+              MERN Specialist
             </h1>
             <h1
-              style={{ color: 'black', fontWeight: 'bold', fontSize: '50px' }}
+              style={{ color: 'black', fontWeight: 'bold', fontSize: titleFontSize }}
               id='title-3'
             >
-              Freelancer
+              Builder of Scalable E-Commerce & User-Centered Apps
             </h1>
           </div>
         </div>
