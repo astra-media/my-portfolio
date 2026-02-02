@@ -22,7 +22,7 @@ const Contact = () => {
             </a>
           </p>
           <h5 style={{ color: 'black' }}>{`Let's get social`}</h5>
-          <p>Follow me on LinkedIn, GitHub & YouTube</p>
+          <p>Follow me on LinkedIn & GitHub</p>
           <div>
             <a target='_blank' href='https://www.linkedin.com/in/msakeeb/'>
               <FontAwesomeIcon
@@ -49,22 +49,6 @@ const Contact = () => {
                   borderRadius: '50%',
                 }}
                 icon={faGithub}
-              />
-            </a>
-            <a
-              target='_blank'
-              href='https://www.youtube.com/channel/UCj7-VMoP_39-fpTPh9MJJWg'
-            >
-              <FontAwesomeIcon
-                className='add-shadow'
-                style={{
-                  fontSize: '25px',
-                  cursor: 'pointer',
-                  maxHeight: '25px',
-                  color: '#FF0000',
-                  backgroundColor: 'white',
-                }}
-                icon={faYoutube}
               />
             </a>
           </div>
