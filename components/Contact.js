@@ -17,14 +17,14 @@ const Contact = () => {
           <p>
             If you wanna get in touch, talk to me about a project collaboration
             or just say hi, send an email to{' '}
-            <a href={`mailto: mohammad@sakeeb.dev`} className='highlights'>
-              mohammad@sakeeb.dev
+            <a href={`mailto: contact@nikastra.com`} className='highlights'>
+              contact@nikastra.com
             </a>
           </p>
           <h5 style={{ color: 'black' }}>{`Let's get social`}</h5>
           <p>Follow me on LinkedIn & GitHub</p>
           <div>
-            <a target='_blank' href='https://www.linkedin.com/in/msakeeb/'>
+            <a target='_blank' href='https://www.linkedin.com/in/nikastra/'>
               <FontAwesomeIcon
                 className='add-shadow'
                 style={{

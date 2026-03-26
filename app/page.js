@@ -200,7 +200,7 @@ const Home = () => {
               <Card.Body>
                 <Card.Title className='d-flex justify-content-center'>
                   <h3 className='aboutText1' style={{ fontWeight: 'bolder' }}>
-                    Hello, my name is Mohammad Sakeeb.
+                    Hello, my name is Nikolas Astra.
                   </h3>
                 </Card.Title>
 
@@ -227,17 +227,17 @@ const Home = () => {
                     page for more examples of my work. For access to private
                     repositories or any inquiries, please reach out to me at{' '}
                     <a
-                      href={`mailto: mohammad@sakeeb.dev`}
+                      href={`mailto: contact@nikastra.com`}
                       className='highlights'
                     >
-                      mohammad@sakeeb.dev
+                      contact@nikastra.com
                     </a>
                   </span>
                 </Card.Text>
               </Card.Body>
             </Card>
             <div className='m-2'>
-              <a target='_blank' href='https://www.linkedin.com/in/msakeeb/'>
+              <a target='_blank' href='https://www.linkedin.com/in/nikastra/'>
                 <FontAwesomeIcon
                   className='add-shadow'
                   style={{

@@ -1,8 +1,8 @@
 {
-  "name": "portfolio-sakeeb",
+  "name": "portfolio-astra",
   "version": "1.0.0",
   "description": "Portfolio built with Next.js SSG",
-  "author": "Mohammad Sakeeb",
+  "author": "Nikolas Astra",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {

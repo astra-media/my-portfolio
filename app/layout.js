@@ -3,7 +3,7 @@ import 'bootswatch/dist/sketchy/bootstrap.min.css'
 import '../styles/custom.css'
 
 export const metadata = {
-  title: 'Full Stack Developer – Mohammad Sakeeb',
+  title: 'Nikolas Astra | Full Stack Developer',
   description:
     'Task-driven Full-Stack Developer and UI/UX Specialist skilled in React, Next.js, and Express.js. Experienced in e-commerce development and web design.',
   icons: {
@@ -11,14 +11,14 @@ export const metadata = {
     apple: '/selfPortrait/selfPortrait_apple-icon.png',
   },
   openGraph: {
-    title: 'Full Stack Developer – Mohammad Sakeeb',
+    title: 'Nikolas Astra | Full Stack Developer',
     description:
       'Task-driven Full-Stack Developer and UI/UX Specialist skilled in React, Next.js, and Express.js. Experienced in e-commerce development and web design.',
-    url: 'https://www.sakeeb.dev/',
-    siteName: 'Mohammad Sakeeb | Full Stack Developer',
+    url: 'https://www.nikastra.com/',
+    siteName: 'Nikolas Astra | Full Stack Developer',
     images: [
       {
-        url: 'https://www.sakeeb.dev/selfPortrait/selfPortrait_Large.jpg',
+        url: 'https://www.nikastra.com/selfPortrait/selfPortrait_Large.jpg',
         width: 1200,
         height: 630,
         alt: 'Self Portrait',
@@ -29,10 +29,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Full Stack Developer – Mohammad Sakeeb',
+    title: 'Nikolas Astra | Full Stack Developer',
     description:
       'Task-driven Full-Stack Developer and UI/UX Specialist skilled in React, Next.js, and Express.js. Experienced in e-commerce development and web design.',
-    images: ['https://www.sakeeb.dev/selfPortrait/selfPortrait_Large.jpg'],
+    images: ['https://www.nikastra.com/selfPortrait/selfPortrait_Large.jpg'],
   },
 }
 
