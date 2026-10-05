@@ -24,7 +24,7 @@ const VariableZ = () => {
         className='d-flex justify-content-between'
         style={{ marginBottom: '10px', marginTop: '10px' }}
       >
-        <a target='_blank' href='https://www.variablezstore.com/'>
+        <a target='_blank' href='https://z-shop-fcv0.onrender.com'>
           <Button className='button-style'>Visit The Website</Button>
         </a>
         <div className='mx-2'>
@@ -139,8 +139,7 @@ const VariableZ = () => {
         tickets, product edits, custom categories, and more.
         <br />
         <br />
-        The code for this project is hosted in a private repository. If you are
-        interested in discussing this project further, please feel free to reach
+        If you are interested in discussing this project further, please feel free to reach
         out to me.
       </p>
       <h5 style={{ color: 'black' }}>Technical Sheet</h5>

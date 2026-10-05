@@ -158,7 +158,7 @@ const Home = () => {
               }}
               id='title-1'
             >
-              Full-Stack Developer
+              IT Support Specialist
             </h1>
             <h1
               style={{
@@ -169,7 +169,7 @@ const Home = () => {
               }}
               id='title-2'
             >
-              MERN Specialist
+              Software developer
             </h1>
             <h1
               style={{ color: 'black', fontWeight: 'bold', fontSize: titleFontSize }}
@@ -206,10 +206,7 @@ const Home = () => {
 
                 <Card.Text>
                   <span className='aboutText2'>
-                    I am a full-stack web developer and UI/UX JavaScript
-                    specialist with expertise in React, Next.js, and Express.js.
-                    My primary focus is on building intuitive and robust web
-                    applications. <br />
+                    I am a software developer with a focus on creating efficient and user-friendly applications. My experience includes working with various programming languages and frameworks to deliver high-quality solutions. <br />
                     One of my standout projects is an e-commerce website that
                     showcases my ability to create seamless online shopping
                     experiences with modern web technologies. Additionally, I
@@ -224,8 +221,7 @@ const Home = () => {
                     >
                       GitHub
                     </a>{' '}
-                    page for more examples of my work. For access to private
-                    repositories or any inquiries, please reach out to me at{' '}
+                    page for more examples of my work. If you have any questions or would like to discuss potential opportunities, please reach out to me at{' '}
                     <a
                       href={`mailto: contact@nikastra.com`}
                       className='highlights'
@@ -289,6 +285,7 @@ const Home = () => {
       <Container>
         <div ref={projects} id='projects'>
           <h3 style={{ fontWeight: 'bolder' }}>Projects</h3>
+          <p>Here are some of the projects I've worked on:</p>
           <VariableZ />
           <hr style={{ width: '50%' }} />
           <h3 style={{ fontWeight: 'bolder' }}>Other Projects</h3>

@@ -14,35 +14,15 @@ const OtherProjects = () => {
       <Row>
         <Col xs={6} sm={6} md={4} lg={4} xl={3}>
           <ProjectCard
-            image={'/images/reactExpressStarter/homeScreen.png'}
-            title={'React + Express Starter Kit'}
-            description={
-              'A simple full-stack boilerplate template using Express, React + Vite, Redux Toolkit, and react-router-dom. This template provides a solid foundation for developing modern web applications.'
-            }
-            modalComponent={<ReactExpressStarter />}
-          />
-        </Col>
-
-        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
-          <ProjectCard
             image={'/images/portfolio/portfolio.jpg'}
-            title={'Next.js Static Exports - Portfolio'}
+            title={'Portfolio - Next.js Static Exports'}
             description={
               'This portfolio website, built with Next.js and exported as a static site, showcases my recent projects as a full-stack web developer and software engineer.'
             }
             modalComponent={<Portfolio />}
           />
         </Col>
-        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
-          <ProjectCard
-            image={'/images/smartThermostat/controllerBoard.jpg'}
-            title={'Smart Thermostat for Air Conditioner - IoT Project'}
-            description={
-              'This IoT project allows users to remotely control the temperature and power state of their existing air conditioners without modifying the A/C control unit, making it a non-invasive and safe solution.'
-            }
-            modalComponent={<SmartThermostat />}
-          />
-        </Col>
+
         <Col xs={6} sm={6} md={4} lg={4} xl={3}>
           <ProjectCard
             image={'/images/machineLearning/happy.jpg'}
@@ -53,6 +33,29 @@ const OtherProjects = () => {
             modalComponent={<MachineLearning />}
           />
         </Col>
+
+        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
+          <ProjectCard
+            image={'/images/smartThermostat/controllerBoard.jpg'}
+            title={'IoT Project - Smart Thermostat for Air Conditioner'}
+            description={
+              'This IoT project allows users to remotely control the temperature and power state of their existing air conditioners without modifying the A/C control unit, making it a non-invasive and safe solution.'
+            }
+            modalComponent={<SmartThermostat />}
+          />
+        </Col>
+
+        <Col xs={6} sm={6} md={4} lg={4} xl={3}>
+          <ProjectCard
+            image={'/images/reactExpressStarter/homeScreen.png'}
+            title={'React + Express Starter Kit'}
+            description={
+              'A simple full-stack boilerplate template using Express, React + Vite, Redux Toolkit, and react-router-dom. This template provides a solid foundation for developing modern web applications.'
+            }
+            modalComponent={<ReactExpressStarter />}
+          />
+        </Col>
+
       </Row>
       <br />
       <div>
