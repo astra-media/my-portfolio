@@ -285,7 +285,7 @@ const Home = () => {
       <Container>
         <div ref={projects} id='projects'>
           <h3 style={{ fontWeight: 'bolder' }}>Projects</h3>
-          <p>Here are some of the projects I've worked on:</p>
+          <p>{"Here are some of the projects I've worked on:"}</p>
           <VariableZ />
           <hr style={{ width: '50%' }} />
           <h3 style={{ fontWeight: 'bolder' }}>Other Projects</h3>
