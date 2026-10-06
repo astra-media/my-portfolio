@@ -169,13 +169,13 @@ const Home = () => {
               }}
               id='title-2'
             >
-              Software developer
+              Technical Troubleshooting
             </h1>
             <h1
               style={{ color: 'black', fontWeight: 'bold', fontSize: titleFontSize }}
               id='title-3'
             >
-              Builder of Scalable E-Commerce & User-Centered Apps
+              & Automation
             </h1>
           </div>
         </div>
@@ -206,27 +206,26 @@ const Home = () => {
 
                 <Card.Text>
                   <span className='aboutText2'>
-                    I am a software developer with a focus on creating efficient and user-friendly applications. My experience includes working with various programming languages and frameworks to deliver high-quality solutions. <br />
-                    One of my standout projects is an e-commerce website that
-                    showcases my ability to create seamless online shopping
-                    experiences with modern web technologies. Additionally, I
-                    have worked on various other projects that highlight my
-                    diverse skill set beyond web development. <br />
-                    Explore my e-commerce project and other notable works below.
-                    Feel free to visit my{' '}
+                    {"I'm an IT Support Specialist with a hands-on technical background in hardware, networking, and software development. I diagnose and resolve issues across Windows, macOS, and Linux, and I build the tools that make systems easier to manage."} 
+                    <br />
+                    <br />
+                    {"My development work includes a full-stack e-commerce site built with the MERN stack, featuring secure authentication and third-party payment integration. I also build microcontroller-based IoT automation, including a smart AC and balcony system using Arduino Cloud and Alexa. I work in Python, C++, and C#."} 
+                    <br />
+                    <br />
+                    {"Explore my projects below, or visit my"}{' '}
                     <a
                       target='_blank'
                       href='https://github.com/astra-media'
                       className='highlights'
                     >
-                      GitHub
+                      {"GitHub"}
                     </a>{' '}
-                    page for more examples of my work. If you have any questions or would like to discuss potential opportunities, please reach out to me at{' '}
+                    {"for more examples. If you'd like to discuss opportunities, reach out to me at"}{' '}
                     <a
                       href={`mailto: contact@nikastra.com`}
                       className='highlights'
                     >
-                      contact@nikastra.com
+                      {"contact@nikastra.com"}
                     </a>
                   </span>
                 </Card.Text>
