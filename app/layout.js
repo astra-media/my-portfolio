@@ -5,7 +5,7 @@ import '../styles/custom.css'
 export const metadata = {
   title: 'Nikolas Astra | IT Support Specialist',
   description:
-    'Task-driven Full-Stack Developer and UI/UX Specialist skilled in React, Next.js, and Express.js. Experienced in e-commerce development and web design.',
+    'IT Support Specialist with a hands-on technical background in hardware, networking, and software development',
   icons: {
     icon: '/selfPortrait/selfPortrait_favicon.png',
     apple: '/selfPortrait/selfPortrait_apple-icon.png',
@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'Nikolas Astra | IT Support Specialist',
     description:
-      'Task-driven Full-Stack Developer and UI/UX Specialist skilled in React, Next.js, and Express.js. Experienced in e-commerce development and web design.',
+      'IT Support Specialist with a hands-on technical background in hardware, networking, and software development',
     url: 'https://www.nikastra.com/',
     siteName: 'Nikolas Astra | IT Support Specialist',
     images: [
@@ -31,7 +31,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Nikolas Astra | IT Support Specialist',
     description:
-      'Task-driven Full-Stack Developer and UI/UX Specialist skilled in React, Next.js, and Express.js. Experienced in e-commerce development and web design.',
+      'IT Support Specialist with a hands-on technical background in hardware, networking, and software development',
     images: ['https://www.nikastra.com/selfPortrait/selfPortrait_Large.jpg'],
   },
 }
